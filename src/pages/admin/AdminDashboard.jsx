@@ -20,6 +20,8 @@ import {
   BarChart3,
   Layers,
   GitBranch,
+  TrendingUp,
+  Activity,
 } from 'lucide-react';
 
 export const AdminDashboard = () => {
@@ -93,7 +95,7 @@ export const AdminDashboard = () => {
       {
         label: 'Students Enrolled',
         data: analytics.career_popularity.map((c) => c.students_count),
-        backgroundColor: '#3b82f6',
+        backgroundColor: '#2563eb',
         borderRadius: 4,
       },
     ],
@@ -106,7 +108,7 @@ export const AdminDashboard = () => {
       {
         label: 'Students with Active Gap',
         data: analytics.common_skill_gaps.map((g) => g.affected_students_count),
-        backgroundColor: '#ef4444',
+        backgroundColor: '#f43f5e',
         borderRadius: 4,
       },
     ],
@@ -118,8 +120,9 @@ export const AdminDashboard = () => {
     datasets: [
       {
         data: Object.values(analytics.readiness_distribution),
-        backgroundColor: ['#10b981', '#3b82f6', '#f59e0b', '#f43f5e'],
-        borderWidth: 0,
+        backgroundColor: ['#10b981', '#2563eb', '#f59e0b', '#f43f5e'],
+        borderWidth: 2,
+        borderColor: '#ffffff',
       },
     ],
   } : null;
@@ -130,60 +133,77 @@ export const AdminDashboard = () => {
     datasets: [
       {
         data: Object.values(analytics.roadmap_brackets),
-        backgroundColor: ['#e2e8f0', '#93c5fd', '#6366f1', '#10b981'],
-        borderWidth: 0,
+        backgroundColor: ['#f1f5f9', '#93c5fd', '#6366f1', '#10b981'],
+        borderWidth: 2,
+        borderColor: '#ffffff',
       },
     ],
   } : null;
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50">
+    <div className="min-h-screen flex flex-col bg-slate-50/70">
       <Navbar />
 
       <div className="flex-1 flex max-w-7xl w-full mx-auto">
         <Sidebar />
 
-        <main className="flex-1 p-6 space-y-6 overflow-y-auto">
-          {/* Header */}
-          <section className="bg-gradient-to-r from-slate-900 via-purple-950 to-slate-900 border border-slate-200 rounded-2xl p-6 shadow-sm text-white">
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold bg-purple-500/20 text-purple-200 border border-purple-400/30 mb-2">
-              <Shield className="w-3.5 h-3.5" /> Administrator Control Center
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 space-y-6 overflow-y-auto">
+          {/* Header Banner */}
+          <section className="bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-7 shadow-xs">
+            <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+              <div className="space-y-1 max-w-2xl">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-purple-50 text-purple-700 border border-purple-100">
+                  <Shield className="w-3.5 h-3.5" />
+                  <span>Platform Command Center</span>
+                </div>
+                <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                  System Administration & Analytics
+                </h1>
+                <p className="text-sm text-slate-500 font-normal">
+                  Configure curriculum standards, analyze cohort readiness, and oversee prerequisite graphs.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2 self-start">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-semibold">
+                  <Activity className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>Operational Status: Healthy</span>
+                </span>
+              </div>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold">System Administration & Analytics</h1>
-            <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl leading-relaxed">
-              Curate career requirements, configure prerequisite dependencies, track cohort readiness benchmarks, and monitor job description analyses.
-            </p>
           </section>
 
           {loading ? (
-            <LoadingSpinner label="Loading admin system intelligence..." />
+            <div className="py-16">
+              <LoadingSpinner label="Compiling administrative intelligence..." />
+            </div>
           ) : (
             <>
               {/* Aggregated Overview Tiles */}
               <section className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-                <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
-                  <span className="text-[11px] font-semibold text-slate-500">Total Students</span>
-                  <p className="text-xl font-black text-slate-900 mt-1">{totals.students}</p>
+                <div className="bg-white border border-slate-200/90 rounded-2xl p-4 shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Total Students</span>
+                  <p className="text-2xl font-black text-slate-900 mt-1">{totals.students}</p>
                 </div>
-                <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
-                  <span className="text-[11px] font-semibold text-slate-500">Career Roles</span>
-                  <p className="text-xl font-black text-slate-900 mt-1">{totals.careers}</p>
+                <div className="bg-white border border-slate-200/90 rounded-2xl p-4 shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Career Roles</span>
+                  <p className="text-2xl font-black text-slate-900 mt-1">{totals.careers}</p>
                 </div>
-                <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
-                  <span className="text-[11px] font-semibold text-slate-500">Skills in Catalog</span>
-                  <p className="text-xl font-black text-slate-900 mt-1">{totals.skills}</p>
+                <div className="bg-white border border-slate-200/90 rounded-2xl p-4 shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Skills in Catalog</span>
+                  <p className="text-2xl font-black text-slate-900 mt-1">{totals.skills}</p>
                 </div>
-                <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
-                  <span className="text-[11px] font-semibold text-slate-500">Learning Resources</span>
-                  <p className="text-xl font-black text-slate-900 mt-1">{totals.resources}</p>
+                <div className="bg-white border border-slate-200/90 rounded-2xl p-4 shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Learning Resources</span>
+                  <p className="text-2xl font-black text-slate-900 mt-1">{totals.resources}</p>
                 </div>
-                <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
-                  <span className="text-[11px] font-semibold text-slate-500">Active Roadmaps</span>
-                  <p className="text-xl font-black text-slate-900 mt-1">{totals.roadmaps}</p>
+                <div className="bg-white border border-slate-200/90 rounded-2xl p-4 shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Active Roadmaps</span>
+                  <p className="text-2xl font-black text-slate-900 mt-1">{totals.roadmaps}</p>
                 </div>
-                <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
-                  <span className="text-[11px] font-semibold text-slate-500">Job Analyses Run</span>
-                  <p className="text-xl font-black text-slate-900 mt-1">{totals.job_analyses}</p>
+                <div className="bg-white border border-slate-200/90 rounded-2xl p-4 shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Avg Readiness</span>
+                  <p className="text-2xl font-black text-emerald-600 mt-1">{totals.avg_readiness}%</p>
                 </div>
               </section>
 
@@ -194,16 +214,16 @@ export const AdminDashboard = () => {
                   return (
                     <div
                       key={card.title}
-                      className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex flex-col justify-between hover:border-slate-300 transition"
+                      className="bg-white border border-slate-200/90 rounded-2xl p-5 shadow-xs flex flex-col justify-between hover:border-slate-300 transition"
                     >
                       <div>
                         <div className="flex items-center justify-between mb-3">
-                          <div className={`w-10 h-10 rounded-xl ${card.color} flex items-center justify-center`}>
+                          <div className={`w-10 h-10 rounded-xl ${card.color} flex items-center justify-center shadow-xs`}>
                             <Icon className="w-5 h-5" />
                           </div>
-                          <span className="text-xl font-extrabold text-slate-900">{card.count}</span>
+                          <span className="text-xl font-black text-slate-900">{card.count}</span>
                         </div>
-                        <h2 className="font-extrabold text-slate-900 text-base">{card.title}</h2>
+                        <h2 className="font-extrabold text-slate-900 text-sm">{card.title}</h2>
                         <p className="text-xs text-slate-500 mt-1 leading-relaxed">{card.desc}</p>
                       </div>
 
@@ -222,14 +242,14 @@ export const AdminDashboard = () => {
               {/* Advanced Analytics Grid */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {/* Career Role Popularity */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+                <div className="bg-white border border-slate-200/90 rounded-2xl p-6 shadow-xs">
                   <div className="flex items-center justify-between mb-3">
                     <div>
-                      <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                      <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-2">
                         <Briefcase className="w-4 h-4 text-blue-600" /> Target Career Role Popularity
                       </h3>
-                      <p className="text-xs text-slate-500 mt-0.5">
-                        Number of students who have selected each target career path.
+                      <p className="text-xs text-slate-400 mt-0.5">
+                        Number of students enrolled in each career track.
                       </p>
                     </div>
                   </div>
@@ -253,13 +273,13 @@ export const AdminDashboard = () => {
                 </div>
 
                 {/* Most Common Skill Gaps */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+                <div className="bg-white border border-slate-200/90 rounded-2xl p-6 shadow-xs">
                   <div className="flex items-center justify-between mb-3">
                     <div>
-                      <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                      <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-2">
                         <Target className="w-4 h-4 text-rose-600" /> Most Common Student Skill Gaps
                       </h3>
-                      <p className="text-xs text-slate-500 mt-0.5">
+                      <p className="text-xs text-slate-400 mt-0.5">
                         Skills where students are most frequently falling below role requirements.
                       </p>
                     </div>
@@ -291,12 +311,12 @@ export const AdminDashboard = () => {
               {/* Distribution Charts */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Cohort Readiness Distribution */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+                <div className="bg-white border border-slate-200/90 rounded-2xl p-6 shadow-xs flex flex-col justify-between">
                   <div>
-                    <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2 mb-1">
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-2 mb-1">
                       <BarChart3 className="w-4 h-4 text-emerald-600" /> Student Readiness Distribution
                     </h3>
-                    <p className="text-xs text-slate-500 mb-3">
+                    <p className="text-xs text-slate-400 mb-3">
                       Average readiness across all students with a target career is <span className="font-extrabold text-slate-900">{totals.avg_readiness}%</span>.
                     </p>
                   </div>
@@ -318,12 +338,12 @@ export const AdminDashboard = () => {
                 </div>
 
                 {/* Roadmap Completion Status */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+                <div className="bg-white border border-slate-200/90 rounded-2xl p-6 shadow-xs flex flex-col justify-between">
                   <div>
-                    <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2 mb-1">
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-2 mb-1">
                       <Layers className="w-4 h-4 text-indigo-600" /> Roadmap Completion Progress
                     </h3>
-                    <p className="text-xs text-slate-500 mb-3">
+                    <p className="text-xs text-slate-400 mb-3">
                       Student progress through their personalized learning roadmaps.
                     </p>
                   </div>
@@ -353,4 +373,5 @@ export const AdminDashboard = () => {
     </div>
   );
 };
+
 export default AdminDashboard;

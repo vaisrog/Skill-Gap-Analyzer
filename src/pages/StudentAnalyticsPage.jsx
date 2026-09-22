@@ -28,7 +28,7 @@ import { LoadingSpinner } from '../components/LoadingSpinner';
 
 const readinessBadge = {
   'Highly Ready': { bg: 'bg-emerald-50 text-emerald-800 border-emerald-200', desc: 'Ready for market applications and interviews.' },
-  Developing: { bg: 'bg-blue-50 text-blue-800 border-blue-200', desc: 'Solid foundational skills; working through intermediate gaps.' },
+  Developing: { bg: 'bg-indigo-50 text-indigo-800 border-indigo-200', desc: 'Solid foundational skills; working through intermediate gaps.' },
   'Needs Improvement': { bg: 'bg-amber-50 text-amber-800 border-amber-200', desc: 'Active skill gaps remain; follow your learning roadmap.' },
   Beginner: { bg: 'bg-rose-50 text-rose-800 border-rose-200', desc: 'Early learning stage; prioritize foundational prerequisites.' },
 };
@@ -151,8 +151,8 @@ export const StudentAnalyticsPage = () => {
         <Sidebar />
         <main className="flex-1 p-6 space-y-6 overflow-y-auto">
           {/* Header */}
-          <section className="bg-gradient-to-r from-slate-900 via-indigo-950 to-blue-900 rounded-2xl p-6 text-white shadow-md">
-            <div className="inline-flex items-center gap-1.5 bg-blue-500/20 border border-blue-400/30 px-3 py-1 rounded-full text-xs font-semibold text-blue-200">
+          <section className="bg-[#0F172A] border border-slate-800 rounded-2xl p-6 text-white shadow-xs">
+            <div className="inline-flex items-center gap-1.5 bg-indigo-500/20 border border-indigo-400/30 px-3 py-1 rounded-full text-xs font-semibold text-indigo-300">
               <TrendingUp className="w-3.5 h-3.5" /> Performance Analytics
             </div>
             <h1 className="mt-3 text-2xl sm:text-3xl font-extrabold tracking-tight">
@@ -166,10 +166,10 @@ export const StudentAnalyticsPage = () => {
           {/* Top Metric Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Career Readiness */}
-            <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+            <div className="bg-white rounded-2xl border border-slate-200/90 p-5 shadow-xs">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold text-slate-500">Career Readiness</span>
-                <span className="p-2 rounded-xl bg-blue-50 text-blue-600">
+                <span className="p-2 rounded-xl bg-indigo-50 text-indigo-600">
                   <Target className="w-4 h-4" />
                 </span>
               </div>
@@ -189,7 +189,7 @@ export const StudentAnalyticsPage = () => {
             </div>
 
             {/* Total Recorded Skills */}
-            <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+            <div className="bg-white rounded-2xl border border-slate-200/90 p-5 shadow-xs">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold text-slate-500">Mastery Portfolio</span>
                 <span className="p-2 rounded-xl bg-emerald-50 text-emerald-600">
@@ -206,7 +206,7 @@ export const StudentAnalyticsPage = () => {
             </div>
 
             {/* Roadmap Completion */}
-            <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+            <div className="bg-white rounded-2xl border border-slate-200/90 p-5 shadow-xs">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold text-slate-500">Roadmap Progress</span>
                 <span className="p-2 rounded-xl bg-indigo-50 text-indigo-600">
@@ -223,7 +223,7 @@ export const StudentAnalyticsPage = () => {
             </div>
 
             {/* Job Market Comparisons */}
-            <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+            <div className="bg-white rounded-2xl border border-slate-200/90 p-5 shadow-xs">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold text-slate-500">Job Analyses</span>
                 <span className="p-2 rounded-xl bg-purple-50 text-purple-600">
@@ -242,20 +242,20 @@ export const StudentAnalyticsPage = () => {
 
           {/* Recommended Next Action Banner */}
           {data.recommended_next_skill && (
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-5 text-white shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="bg-[#0F172A] border border-slate-800 rounded-2xl p-5 text-white shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-white/20 text-white mb-1.5">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 mb-1.5">
                   <Sparkles className="w-3 h-3" /> Recommended Next Study Step
                 </div>
-                <h3 className="text-lg font-bold">{data.recommended_next_skill.skill_name}</h3>
-                <p className="text-xs text-blue-100 mt-0.5">
+                <h3 className="text-lg font-bold text-white">{data.recommended_next_skill.skill_name}</h3>
+                <p className="text-xs text-slate-300 mt-0.5">
                   {data.recommended_next_skill.topic || `Focus on closing the gap in ${data.recommended_next_skill.skill_name}.`}
                 </p>
               </div>
               <div className="flex items-center gap-3 shrink-0">
                 <Link
                   to="/roadmap"
-                  className="px-4 py-2 bg-white text-blue-700 text-xs font-bold rounded-lg hover:bg-blue-50 transition shadow-sm inline-flex items-center gap-1.5"
+                  className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl transition shadow-xs inline-flex items-center gap-1.5"
                 >
                   <BookOpen className="w-3.5 h-3.5" /> Study in Roadmap
                 </Link>
@@ -266,11 +266,11 @@ export const StudentAnalyticsPage = () => {
           {/* Visualization Charts Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Top Gaps Bar Chart (2 cols on lg) */}
-            <div className="lg:col-span-2 bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <div className="lg:col-span-2 bg-white rounded-2xl border border-slate-200/90 p-6 shadow-xs">
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-                    <BarChart3 className="w-4 h-4 text-blue-600" /> Career Benchmark Gaps
+                    <BarChart3 className="w-4 h-4 text-indigo-600" /> Career Benchmark Gaps
                   </h3>
                   <p className="text-xs text-slate-500 mt-0.5">
                     Comparison between your current level and target role requirements.
@@ -315,7 +315,7 @@ export const StudentAnalyticsPage = () => {
             </div>
 
             {/* Mastery Distribution Doughnut */}
-            <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col justify-between">
+            <div className="bg-white rounded-2xl border border-slate-200/90 p-6 shadow-xs flex flex-col justify-between">
               <div>
                 <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2 mb-1">
                   <Layers className="w-4 h-4 text-indigo-600" /> Skill Mastery Tiers
@@ -348,10 +348,10 @@ export const StudentAnalyticsPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <Link
               to="/job-analyzer"
-              className="p-4 bg-white rounded-2xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition flex items-center justify-between group"
+              className="p-4 bg-white rounded-2xl border border-slate-200/90 hover:border-indigo-300 hover:shadow-xs transition flex items-center justify-between group"
             >
               <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition">
+                <div className="p-2.5 rounded-xl bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition">
                   <FileSearch className="w-5 h-5" />
                 </div>
                 <div>
@@ -359,12 +359,12 @@ export const StudentAnalyticsPage = () => {
                   <p className="text-[11px] text-slate-500">Compare against specific job postings</p>
                 </div>
               </div>
-              <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition" />
+              <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-indigo-600 transition" />
             </Link>
 
             <Link
               to="/roadmap"
-              className="p-4 bg-white rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition flex items-center justify-between group"
+              className="p-4 bg-white rounded-2xl border border-slate-200/90 hover:border-indigo-300 hover:shadow-xs transition flex items-center justify-between group"
             >
               <div className="flex items-center gap-3">
                 <div className="p-2.5 rounded-xl bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition">
@@ -380,7 +380,7 @@ export const StudentAnalyticsPage = () => {
 
             <Link
               to="/skills"
-              className="p-4 bg-white rounded-2xl border border-slate-200 hover:border-emerald-300 hover:shadow-md transition flex items-center justify-between group"
+              className="p-4 bg-white rounded-2xl border border-slate-200/90 hover:border-emerald-300 hover:shadow-xs transition flex items-center justify-between group"
             >
               <div className="flex items-center gap-3">
                 <div className="p-2.5 rounded-xl bg-emerald-50 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition">

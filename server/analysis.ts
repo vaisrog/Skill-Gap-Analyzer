@@ -149,6 +149,7 @@ export function buildSkillGapAnalysis(student: User): { analysis: any | null; er
       category: career.category,
     },
     readiness_score: readinessScore,
+    readiness_percentage: readinessScore,
     readiness_classification: getReadinessClassification(readinessScore),
     calculation: {
       method: 'weighted requirement satisfaction',
@@ -165,6 +166,7 @@ export function buildSkillGapAnalysis(student: User): { analysis: any | null; er
     recommended_next_skill: gaps.length > 0 ? gaps[0] : null,
     priority_skills: gaps.slice(0, 5),
     skill_gaps: gaps,
+    weaknesses: gaps,
     strengths,
     major_gaps: majorGaps,
     missing_skills: missingSkills,

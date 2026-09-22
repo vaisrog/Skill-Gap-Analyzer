@@ -1,0 +1,3117 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "full_name": "System Administrator",
+      "email": "admin@skillgap.com",
+      "password_hash": "$2a$10$rcWBXeoUUda8KvmQJNfMl.STJxz.vV6kxJQXdl7gPxxkf062TcdKu",
+      "role": "admin",
+      "qualification": "M.Tech Computer Science",
+      "graduation_year": 2020,
+      "career_interest": null,
+      "target_career_id": null,
+      "created_at": "2026-09-22T13:38:41.282Z",
+      "updated_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 2,
+      "full_name": "Alex Johnson",
+      "email": "student@skillgap.com",
+      "password_hash": "$2a$10$2o44p.lGTZnyRqgA2PqAdeQmjEwN5Cpr27B2IQdUN.qigVYtfgH3K",
+      "role": "student",
+      "qualification": "B.Tech Computer Science",
+      "graduation_year": 2026,
+      "career_interest": null,
+      "target_career_id": 1,
+      "created_at": "2026-09-22T13:38:41.282Z",
+      "updated_at": "2026-09-22T13:56:13.030Z"
+    },
+    {
+      "id": 3,
+      "full_name": "Vaisnav",
+      "email": "vaisnav2006@gmail.com",
+      "password_hash": "$2a$10$b9HJK.33yZ.a/Q32TSKeSuvJRG4CoXJwPPYP61vTbETTs2GLI6GQu",
+      "role": "student",
+      "qualification": "B.Tech Computer Science",
+      "graduation_year": 2026,
+      "career_interest": "AI Systems Engineer",
+      "target_career_id": 1,
+      "created_at": "2026-09-22T13:38:41.643Z",
+      "updated_at": "2026-09-22T13:38:41.643Z"
+    },
+    {
+      "id": 4,
+      "full_name": "Student B Tester",
+      "email": "test_student_b_1790085057090@skillgap.com",
+      "password_hash": "$2a$10$faFiImxqM12Qa0.LaTa0Oe1l3X/EWVSDsuBZiQDNhYI1n3FHGBsUW",
+      "role": "student",
+      "qualification": "B.Tech IT",
+      "graduation_year": 2026,
+      "career_interest": null,
+      "target_career_id": null,
+      "created_at": "2026-09-22T13:50:57.182Z",
+      "updated_at": "2026-09-22T13:50:57.182Z"
+    },
+    {
+      "id": 5,
+      "full_name": "Student B Tester",
+      "email": "test_student_b_1790085143279@skillgap.com",
+      "password_hash": "$2a$10$Y66sdAcnfJjQ5kokvqr7/.CA20MOobWfqx4MR1eAa3enWZAuK30/6",
+      "role": "student",
+      "qualification": "B.Tech IT",
+      "graduation_year": 2026,
+      "career_interest": null,
+      "target_career_id": null,
+      "created_at": "2026-09-22T13:52:23.370Z",
+      "updated_at": "2026-09-22T13:52:23.370Z"
+    },
+    {
+      "id": 6,
+      "full_name": "Student B Tester",
+      "email": "test_student_b_1790085305429@skillgap.com",
+      "password_hash": "$2a$10$VNLym2Y/4ZnjtBjHxGB6l.PRjrAK0v1Oa./J.oB/vWhWj/CGyfgkG",
+      "role": "student",
+      "qualification": "B.Tech IT",
+      "graduation_year": 2026,
+      "career_interest": null,
+      "target_career_id": null,
+      "created_at": "2026-09-22T13:55:05.518Z",
+      "updated_at": "2026-09-22T13:55:05.518Z"
+    },
+    {
+      "id": 7,
+      "full_name": "Student B Tester",
+      "email": "test_student_b_1790085341669@skillgap.com",
+      "password_hash": "$2a$10$/oZV9Te3/8URDAJ9UTB84On5pfqwLpIqZ9SxFtqx0.eNWn74LsjsS",
+      "role": "student",
+      "qualification": "B.Tech IT",
+      "graduation_year": 2026,
+      "career_interest": null,
+      "target_career_id": null,
+      "created_at": "2026-09-22T13:55:41.758Z",
+      "updated_at": "2026-09-22T13:55:41.758Z"
+    },
+    {
+      "id": 8,
+      "full_name": "Student B Tester",
+      "email": "test_student_b_1790085354747@skillgap.com",
+      "password_hash": "$2a$10$UYI1lIqxXmNuYXcGIOvAPOJC0DUxqqXPsoQCCr.i7FSGO0j8.zF/a",
+      "role": "student",
+      "qualification": "B.Tech IT",
+      "graduation_year": 2026,
+      "career_interest": null,
+      "target_career_id": null,
+      "created_at": "2026-09-22T13:55:54.837Z",
+      "updated_at": "2026-09-22T13:55:54.837Z"
+    },
+    {
+      "id": 9,
+      "full_name": "Student B Tester",
+      "email": "test_student_b_1790085365983@skillgap.com",
+      "password_hash": "$2a$10$yC4ymehri87JjKy6BUZ.0OWq8ilHGhvY6ZqeD9a1h6XgfuwngdCDm",
+      "role": "student",
+      "qualification": "B.Tech IT",
+      "graduation_year": 2026,
+      "career_interest": null,
+      "target_career_id": null,
+      "created_at": "2026-09-22T13:56:06.073Z",
+      "updated_at": "2026-09-22T13:56:06.073Z"
+    },
+    {
+      "id": 10,
+      "full_name": "Student B Tester",
+      "email": "test_student_b_1790085372916@skillgap.com",
+      "password_hash": "$2a$10$8BkWmIK.yjz3bT5i.l9JMuYlydmrAmjrG4H0DFmpvYNN3jW5fPDha",
+      "role": "student",
+      "qualification": "B.Tech IT",
+      "graduation_year": 2026,
+      "career_interest": null,
+      "target_career_id": null,
+      "created_at": "2026-09-22T13:56:13.009Z",
+      "updated_at": "2026-09-22T13:56:13.009Z"
+    }
+  ],
+  "skills": [
+    {
+      "id": 1,
+      "name": "Python",
+      "category": "Programming",
+      "description": "High-level programming language widely used in web backend, data science, and scripting.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 2,
+      "name": "JavaScript",
+      "category": "Programming",
+      "description": "Core language for web interactivity and full-stack development with Node.js.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 3,
+      "name": "Java",
+      "category": "Programming",
+      "description": "Object-oriented language popular for enterprise software and Android development.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 4,
+      "name": "C++",
+      "category": "Programming",
+      "description": "High-performance systems programming and algorithm optimization language.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 5,
+      "name": "Data Structures & Algorithms",
+      "category": "Computer Science",
+      "description": "Core computational problem-solving principles and data organization techniques.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 6,
+      "name": "Object-Oriented Design",
+      "category": "Computer Science",
+      "description": "Software architectural paradigm based on class hierarchies and design patterns.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 7,
+      "name": "SQL",
+      "category": "Databases",
+      "description": "Relational database query language for data manipulation and schema management.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 8,
+      "name": "React",
+      "category": "Web Development",
+      "description": "Popular frontend JavaScript UI library for building component-based interfaces.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 9,
+      "name": "Node.js",
+      "category": "Web Development",
+      "description": "Asynchronous event-driven JavaScript runtime environment for backend development.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 10,
+      "name": "HTML & CSS",
+      "category": "Web Development",
+      "description": "Fundamental building blocks of modern web page structure and visual styling.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 11,
+      "name": "Database Design",
+      "category": "Databases",
+      "description": "Principles of ER modelling, normalization, and relational schema optimization.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 12,
+      "name": "Data Visualization",
+      "category": "Data & Analytics",
+      "description": "Techniques and tools (Tableau, PowerBI, Matplotlib) to present insights visually.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 13,
+      "name": "Statistics & Probability",
+      "category": "Data & Analytics",
+      "description": "Mathematical foundations for statistical analysis, testing, and data modeling.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 14,
+      "name": "Excel & Spreadsheet Modeling",
+      "category": "Data & Analytics",
+      "description": "Advanced spreadsheet functions, pivot tables, and analytical reporting.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 15,
+      "name": "Network Security",
+      "category": "Cybersecurity",
+      "description": "Protocols, firewalls, and defense mechanisms protecting data network infrastructure.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 16,
+      "name": "Ethical Hacking & Penetration Testing",
+      "category": "Cybersecurity",
+      "description": "Vulnerability scanning, exploit analysis, and security auditing techniques.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 17,
+      "name": "Linux System Administration",
+      "category": "Cybersecurity & Infrastructure",
+      "description": "Command-line proficiency, user permissions, shell scripting, and server configuration.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 18,
+      "name": "Cryptography & PKI",
+      "category": "Cybersecurity",
+      "description": "Encryption standards, digital certificates, and secure communication protocols.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 19,
+      "name": "Incident Response",
+      "category": "Cybersecurity",
+      "description": "Methodologies for detecting, analyzing, and mitigating security breaches.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 20,
+      "name": "AWS & Cloud Platforms",
+      "category": "Cloud & Infrastructure",
+      "description": "Core cloud concepts, IAM, EC2, S3, serverless computing, and cloud architecture.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 21,
+      "name": "Docker & Containerization",
+      "category": "DevOps",
+      "description": "Packaging software applications into isolated container environments.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 22,
+      "name": "Kubernetes",
+      "category": "DevOps",
+      "description": "Container orchestration system for automating application deployment and scaling.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 23,
+      "name": "Git & CI/CD",
+      "category": "DevOps",
+      "description": "Distributed version control and automated build/test pipelines.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 24,
+      "name": "Terraform & IaC",
+      "category": "DevOps",
+      "description": "Infrastructure as Code automation for cloud resource provisioning.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 25,
+      "name": "Pandas",
+      "category": "Data & Analytics",
+      "description": "Python library for tabular data cleaning, transformation, and analysis.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 26,
+      "name": "NumPy",
+      "category": "Data & Analytics",
+      "description": "Python library for numerical computing and array operations.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 27,
+      "name": "Power BI",
+      "category": "Data & Analytics",
+      "description": "Business intelligence tool for interactive reporting and dashboards.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 28,
+      "name": "REST APIs",
+      "category": "Web Development",
+      "description": "Designing and consuming HTTP APIs using REST conventions.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 29,
+      "name": "Networking",
+      "category": "Cybersecurity & Infrastructure",
+      "description": "TCP/IP, DNS, routing, and core network troubleshooting concepts.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 30,
+      "name": "SIEM",
+      "category": "Cybersecurity",
+      "description": "Security information and event management for monitoring and alerting.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 31,
+      "name": "Security Tools",
+      "category": "Cybersecurity",
+      "description": "Practical use of vulnerability scanners, endpoint tools, and security utilities.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 32,
+      "name": "Cloud Security",
+      "category": "Cloud & Infrastructure",
+      "description": "Cloud IAM, workload protection, and secure cloud architecture practices.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 33,
+      "name": "Programming Fundamentals",
+      "category": "Programming",
+      "description": "Variables, control flow, functions, debugging, and program design basics.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 34,
+      "name": "Algorithms",
+      "category": "Computer Science",
+      "description": "Algorithmic problem solving, complexity analysis, and common techniques.",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 35,
+      "name": "GraphQL Test Skill",
+      "category": "Backend Development",
+      "description": "Updated GraphQL API description.",
+      "created_at": "2026-09-22T13:55:05.601Z"
+    },
+    {
+      "id": 36,
+      "name": "GraphQL Test Skill 1790085354900",
+      "category": "Backend Development",
+      "description": "Updated GraphQL API description.",
+      "created_at": "2026-09-22T13:55:54.902Z"
+    },
+    {
+      "id": 37,
+      "name": "GraphQL Test Skill 1790085366186",
+      "category": "Backend Development",
+      "description": "Updated GraphQL API description.",
+      "created_at": "2026-09-22T13:56:06.188Z"
+    },
+    {
+      "id": 38,
+      "name": "GraphQL Test Skill 1790085373091",
+      "category": "Backend Development",
+      "description": "Updated GraphQL API description.",
+      "created_at": "2026-09-22T13:56:13.094Z"
+    }
+  ],
+  "careerRoles": [
+    {
+      "id": 1,
+      "title": "Data Analyst",
+      "description": "Transforms raw data into actionable business insights using statistical models, SQL queries, and visual dashboards.",
+      "category": "Data & Analytics",
+      "icon": "BarChart3",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 2,
+      "title": "Full Stack Developer",
+      "description": "Designs and develops both user-facing client applications and backend server architectures.",
+      "category": "Web Development",
+      "icon": "Code",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 3,
+      "title": "Cybersecurity Analyst",
+      "description": "Monitors and safeguards computer networks and information systems against cyber threats and security vulnerabilities.",
+      "category": "Cybersecurity",
+      "icon": "ShieldAlert",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 4,
+      "title": "Cloud Engineer",
+      "description": "Architects, deploys, and manages scalable cloud infrastructure and containerized workloads.",
+      "category": "Cloud & Infrastructure",
+      "icon": "Cloud",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 5,
+      "title": "Software Developer",
+      "description": "Builds robust, scalable software applications and system tools following computer science engineering fundamentals.",
+      "category": "Software Engineering",
+      "icon": "Terminal",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 6,
+      "title": "DevOps Specialist Test",
+      "description": "Automates deployments.",
+      "category": null,
+      "icon": "Briefcase",
+      "created_at": "2026-09-22T13:55:05.608Z"
+    },
+    {
+      "id": 7,
+      "title": "DevOps Specialist Test 1790085354908",
+      "description": "Automates deployments.",
+      "category": null,
+      "icon": "Briefcase",
+      "created_at": "2026-09-22T13:55:54.910Z"
+    },
+    {
+      "id": 8,
+      "title": "DevOps Specialist Test 1790085366196",
+      "description": "Updated DevOps description.",
+      "category": null,
+      "icon": "Briefcase",
+      "created_at": "2026-09-22T13:56:06.199Z"
+    },
+    {
+      "id": 9,
+      "title": "DevOps Specialist Test 1790085373100",
+      "description": "Updated DevOps description.",
+      "category": null,
+      "icon": "Briefcase",
+      "created_at": "2026-09-22T13:56:13.102Z"
+    }
+  ],
+  "roleSkills": [
+    {
+      "id": 1,
+      "role_id": 1,
+      "skill_id": 7,
+      "required_proficiency": 5,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 2,
+      "role_id": 1,
+      "skill_id": 1,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 3,
+      "role_id": 1,
+      "skill_id": 12,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 4,
+      "role_id": 1,
+      "skill_id": 13,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 5,
+      "role_id": 1,
+      "skill_id": 14,
+      "required_proficiency": 4,
+      "is_core": false,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 6,
+      "role_id": 1,
+      "skill_id": 25,
+      "required_proficiency": 3,
+      "is_core": false,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 7,
+      "role_id": 1,
+      "skill_id": 26,
+      "required_proficiency": 3,
+      "is_core": false,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 8,
+      "role_id": 1,
+      "skill_id": 27,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 9,
+      "role_id": 2,
+      "skill_id": 2,
+      "required_proficiency": 5,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 10,
+      "role_id": 2,
+      "skill_id": 8,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 11,
+      "role_id": 2,
+      "skill_id": 9,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 12,
+      "role_id": 2,
+      "skill_id": 10,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 13,
+      "role_id": 2,
+      "skill_id": 11,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 14,
+      "role_id": 2,
+      "skill_id": 7,
+      "required_proficiency": 3,
+      "is_core": false,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 15,
+      "role_id": 2,
+      "skill_id": 23,
+      "required_proficiency": 3,
+      "is_core": false,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 16,
+      "role_id": 2,
+      "skill_id": 28,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 17,
+      "role_id": 3,
+      "skill_id": 15,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 18,
+      "role_id": 3,
+      "skill_id": 17,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 19,
+      "role_id": 3,
+      "skill_id": 19,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 20,
+      "role_id": 3,
+      "skill_id": 16,
+      "required_proficiency": 3,
+      "is_core": false,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 21,
+      "role_id": 3,
+      "skill_id": 18,
+      "required_proficiency": 3,
+      "is_core": false,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 22,
+      "role_id": 3,
+      "skill_id": 29,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 23,
+      "role_id": 3,
+      "skill_id": 30,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 24,
+      "role_id": 3,
+      "skill_id": 31,
+      "required_proficiency": 3,
+      "is_core": false,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 25,
+      "role_id": 4,
+      "skill_id": 20,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 26,
+      "role_id": 4,
+      "skill_id": 21,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 27,
+      "role_id": 4,
+      "skill_id": 17,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 28,
+      "role_id": 4,
+      "skill_id": 22,
+      "required_proficiency": 3,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 29,
+      "role_id": 4,
+      "skill_id": 23,
+      "required_proficiency": 3,
+      "is_core": false,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 30,
+      "role_id": 4,
+      "skill_id": 24,
+      "required_proficiency": 3,
+      "is_core": false,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 31,
+      "role_id": 4,
+      "skill_id": 29,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 32,
+      "role_id": 4,
+      "skill_id": 1,
+      "required_proficiency": 3,
+      "is_core": false,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 33,
+      "role_id": 4,
+      "skill_id": 32,
+      "required_proficiency": 3,
+      "is_core": false,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 34,
+      "role_id": 5,
+      "skill_id": 5,
+      "required_proficiency": 5,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 35,
+      "role_id": 5,
+      "skill_id": 1,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 36,
+      "role_id": 5,
+      "skill_id": 6,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 37,
+      "role_id": 5,
+      "skill_id": 23,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 38,
+      "role_id": 5,
+      "skill_id": 7,
+      "required_proficiency": 3,
+      "is_core": false,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 39,
+      "role_id": 5,
+      "skill_id": 33,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 40,
+      "role_id": 5,
+      "skill_id": 34,
+      "required_proficiency": 4,
+      "is_core": true,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 41,
+      "role_id": 5,
+      "skill_id": 3,
+      "required_proficiency": 3,
+      "is_core": false,
+      "created_at": "2026-09-22T13:38:41.282Z"
+    }
+  ],
+  "studentSkills": [
+    {
+      "id": 1,
+      "student_id": 2,
+      "skill_id": 1,
+      "proficiency": 3,
+      "created_at": "2026-09-22T13:55:05.581Z",
+      "updated_at": "2026-09-22T13:56:13.072Z"
+    }
+  ],
+  "learningResources": [
+    {
+      "id": 1,
+      "skill_id": 1,
+      "title": "Complete Python Bootcamp 2026",
+      "url": "https://www.coursera.org",
+      "resource_type": "Course",
+      "difficulty_level": "Beginner",
+      "platform": "Coursera",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 2,
+      "skill_id": 7,
+      "title": "Interactive SQL Tutorial & Queries",
+      "url": "https://www.mode.com/sql-tutorial",
+      "resource_type": "Documentation",
+      "difficulty_level": "Beginner",
+      "platform": "Mode Analytics",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 3,
+      "skill_id": 8,
+      "title": "Official React Docs & Interactive Guide",
+      "url": "https://react.dev",
+      "resource_type": "Documentation",
+      "difficulty_level": "Intermediate",
+      "platform": "React Org",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 4,
+      "skill_id": 2,
+      "title": "Modern JavaScript from Beginning to Master",
+      "url": "https://developer.mozilla.org",
+      "resource_type": "Documentation",
+      "difficulty_level": "Beginner",
+      "platform": "MDN Web Docs",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 5,
+      "skill_id": 5,
+      "title": "Mastering Algorithms & Data Structures",
+      "url": "https://www.geeksforgeeks.org",
+      "resource_type": "Course",
+      "difficulty_level": "Intermediate",
+      "platform": "GeeksforGeeks",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 6,
+      "skill_id": 20,
+      "title": "AWS Certified Cloud Practitioner Essentials",
+      "url": "https://aws.amazon.com/training/",
+      "resource_type": "Course",
+      "difficulty_level": "Beginner",
+      "platform": "AWS Skill Builder",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 7,
+      "skill_id": 10,
+      "title": "Responsive Web Design & Modern CSS",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn/HTML",
+      "resource_type": "Documentation",
+      "difficulty_level": "Beginner",
+      "platform": "MDN Web Docs",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 8,
+      "skill_id": 9,
+      "title": "Node.js Backend Architecture & Express Guides",
+      "url": "https://nodejs.org/en/docs",
+      "resource_type": "Documentation",
+      "difficulty_level": "Intermediate",
+      "platform": "Node.js Org",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 9,
+      "skill_id": 17,
+      "title": "Linux Journey: Practical Admin & Terminal Essentials",
+      "url": "https://linuxjourney.com",
+      "resource_type": "Course",
+      "difficulty_level": "Beginner",
+      "platform": "Linux Journey",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 10,
+      "skill_id": 21,
+      "title": "Docker Getting Started Guide & Container Mastery",
+      "url": "https://docs.docker.com/get-started/",
+      "resource_type": "Documentation",
+      "difficulty_level": "Beginner",
+      "platform": "Docker Docs",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 11,
+      "skill_id": 23,
+      "title": "Pro Git Book and Modern CI/CD Workflows",
+      "url": "https://git-scm.com/book/en/v2",
+      "resource_type": "Documentation",
+      "difficulty_level": "Beginner",
+      "platform": "Git SCM",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 12,
+      "skill_id": 12,
+      "title": "Data Storytelling & Visual Dashboards",
+      "url": "https://www.tableau.com/learn",
+      "resource_type": "Course",
+      "difficulty_level": "Beginner",
+      "platform": "Tableau Learn",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 13,
+      "skill_id": 13,
+      "title": "Introduction to Applied Probability & Statistics",
+      "url": "https://ocw.mit.edu",
+      "resource_type": "Course",
+      "difficulty_level": "Intermediate",
+      "platform": "MIT OpenCourseWare",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 14,
+      "skill_id": 15,
+      "title": "Computer Networking and Network Security Fundamentals",
+      "url": "https://www.coursera.org",
+      "resource_type": "Course",
+      "difficulty_level": "Intermediate",
+      "platform": "Coursera",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 15,
+      "skill_id": 11,
+      "title": "Relational Database Schema Design & Normalization",
+      "url": "https://www.postgresqltutorial.com",
+      "resource_type": "Documentation",
+      "difficulty_level": "Intermediate",
+      "platform": "PostgreSQL Tutorial",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 16,
+      "skill_id": 6,
+      "title": "Design Patterns: Elements of Reusable Object-Oriented Software",
+      "url": "https://refactoring.guru/design-patterns",
+      "resource_type": "Documentation",
+      "difficulty_level": "Intermediate",
+      "platform": "Refactoring Guru",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    },
+    {
+      "id": 17,
+      "skill_id": 22,
+      "title": "Kubernetes Production Architecture & Pod Lifecycle",
+      "url": "https://kubernetes.io/docs/tutorials/",
+      "resource_type": "Documentation",
+      "difficulty_level": "Advanced",
+      "platform": "Kubernetes.io",
+      "created_at": "2026-09-22T13:38:41.282Z"
+    }
+  ],
+  "skillPrerequisites": [
+    {
+      "id": 1,
+      "skill_id": 8,
+      "prerequisite_skill_id": 2
+    },
+    {
+      "id": 2,
+      "skill_id": 8,
+      "prerequisite_skill_id": 10
+    },
+    {
+      "id": 3,
+      "skill_id": 9,
+      "prerequisite_skill_id": 2
+    },
+    {
+      "id": 4,
+      "skill_id": 2,
+      "prerequisite_skill_id": 10
+    },
+    {
+      "id": 5,
+      "skill_id": 11,
+      "prerequisite_skill_id": 7
+    },
+    {
+      "id": 6,
+      "skill_id": 12,
+      "prerequisite_skill_id": 13
+    },
+    {
+      "id": 7,
+      "skill_id": 12,
+      "prerequisite_skill_id": 1
+    },
+    {
+      "id": 8,
+      "skill_id": 14,
+      "prerequisite_skill_id": 13
+    },
+    {
+      "id": 9,
+      "skill_id": 22,
+      "prerequisite_skill_id": 21
+    },
+    {
+      "id": 10,
+      "skill_id": 21,
+      "prerequisite_skill_id": 17
+    },
+    {
+      "id": 11,
+      "skill_id": 20,
+      "prerequisite_skill_id": 17
+    },
+    {
+      "id": 12,
+      "skill_id": 15,
+      "prerequisite_skill_id": 17
+    },
+    {
+      "id": 13,
+      "skill_id": 16,
+      "prerequisite_skill_id": 15
+    },
+    {
+      "id": 14,
+      "skill_id": 16,
+      "prerequisite_skill_id": 17
+    },
+    {
+      "id": 15,
+      "skill_id": 19,
+      "prerequisite_skill_id": 15
+    },
+    {
+      "id": 16,
+      "skill_id": 6,
+      "prerequisite_skill_id": 5
+    },
+    {
+      "id": 17,
+      "skill_id": 5,
+      "prerequisite_skill_id": 1
+    }
+  ],
+  "roadmaps": [
+    {
+      "id": 1,
+      "student_id": 2,
+      "career_id": 1,
+      "title": "Data Analyst Learning Roadmap",
+      "target_career_title": "Data Analyst",
+      "total_items": 11,
+      "completed_items": 0,
+      "overall_completion": 5,
+      "created_at": "2026-09-22T13:50:57.244Z",
+      "updated_at": "2026-09-22T13:56:13.087Z"
+    }
+  ],
+  "roadmapItems": [
+    {
+      "id": 61,
+      "roadmap_id": 1,
+      "student_id": 2,
+      "sequence": 1,
+      "skill_id": 7,
+      "skill_name": "SQL",
+      "skill_category": "Databases",
+      "topic": "SQL Fundamentals & Advanced Core",
+      "description": "Relational database query language for data manipulation and schema management.",
+      "why_needed": "Preparing for Data Analyst requires Expert in SQL. Your current assessed level is No Knowledge (Gap: 5).",
+      "current_proficiency": 0,
+      "required_proficiency": 5,
+      "skill_gap": 5,
+      "importance": "Critical",
+      "priority": "Critical",
+      "difficulty": "Beginner → Advanced",
+      "estimated_duration": "10 weeks",
+      "prerequisites": [],
+      "learning_resource": {
+        "id": 2,
+        "title": "Interactive SQL Tutorial & Queries",
+        "url": "https://www.mode.com/sql-tutorial",
+        "resource_type": "Documentation",
+        "difficulty_level": "Beginner",
+        "platform": "Mode Analytics"
+      },
+      "status": "In Progress",
+      "completion_percentage": 50,
+      "created_at": "2026-09-22T13:56:13.059Z",
+      "updated_at": "2026-09-22T13:56:13.064Z"
+    },
+    {
+      "id": 62,
+      "roadmap_id": 1,
+      "student_id": 2,
+      "sequence": 2,
+      "skill_id": 27,
+      "skill_name": "Power BI",
+      "skill_category": "Data & Analytics",
+      "topic": "Power BI Fundamentals & Advanced Core",
+      "description": "Business intelligence tool for interactive reporting and dashboards.",
+      "why_needed": "Preparing for Data Analyst requires Advanced in Power BI. Your current assessed level is No Knowledge (Gap: 4).",
+      "current_proficiency": 0,
+      "required_proficiency": 4,
+      "skill_gap": 4,
+      "importance": "Critical",
+      "priority": "Critical",
+      "difficulty": "Beginner → Advanced",
+      "estimated_duration": "8 weeks",
+      "prerequisites": [],
+      "learning_resource": null,
+      "status": "Not Started",
+      "completion_percentage": 0,
+      "created_at": "2026-09-22T13:56:13.059Z",
+      "updated_at": "2026-09-22T13:56:13.059Z"
+    },
+    {
+      "id": 63,
+      "roadmap_id": 1,
+      "student_id": 2,
+      "sequence": 3,
+      "skill_id": 13,
+      "skill_name": "Statistics & Probability",
+      "skill_category": "Data & Analytics",
+      "topic": "Statistics & Probability Fundamentals & Advanced Core",
+      "description": "Mathematical foundations for statistical analysis, testing, and data modeling.",
+      "why_needed": "Preparing for Data Analyst requires Advanced in Statistics & Probability. Your current assessed level is No Knowledge (Gap: 4).",
+      "current_proficiency": 0,
+      "required_proficiency": 4,
+      "skill_gap": 4,
+      "importance": "Critical",
+      "priority": "Critical",
+      "difficulty": "Beginner → Advanced",
+      "estimated_duration": "8 weeks",
+      "prerequisites": [],
+      "learning_resource": {
+        "id": 13,
+        "title": "Introduction to Applied Probability & Statistics",
+        "url": "https://ocw.mit.edu",
+        "resource_type": "Course",
+        "difficulty_level": "Intermediate",
+        "platform": "MIT OpenCourseWare"
+      },
+      "status": "Not Started",
+      "completion_percentage": 0,
+      "created_at": "2026-09-22T13:56:13.059Z",
+      "updated_at": "2026-09-22T13:56:13.059Z"
+    },
+    {
+      "id": 64,
+      "roadmap_id": 1,
+      "student_id": 2,
+      "sequence": 4,
+      "skill_id": 1,
+      "skill_name": "Python",
+      "skill_category": "Programming",
+      "topic": "Mastery & Expert Applications in Python",
+      "description": "High-level programming language widely used in web backend, data science, and scripting.",
+      "why_needed": "Preparing for Data Analyst requires Advanced in Python. Your current assessed level is Intermediate (Gap: 1).",
+      "current_proficiency": 3,
+      "required_proficiency": 4,
+      "skill_gap": 1,
+      "importance": "Critical",
+      "priority": "High",
+      "difficulty": "Intermediate",
+      "estimated_duration": "2 weeks",
+      "prerequisites": [],
+      "learning_resource": {
+        "id": 1,
+        "title": "Complete Python Bootcamp 2026",
+        "url": "https://www.coursera.org",
+        "resource_type": "Course",
+        "difficulty_level": "Beginner",
+        "platform": "Coursera"
+      },
+      "status": "Not Started",
+      "completion_percentage": 0,
+      "created_at": "2026-09-22T13:56:13.059Z",
+      "updated_at": "2026-09-22T13:56:13.059Z"
+    },
+    {
+      "id": 65,
+      "roadmap_id": 1,
+      "student_id": 2,
+      "sequence": 5,
+      "skill_id": 12,
+      "skill_name": "Data Visualization",
+      "skill_category": "Data & Analytics",
+      "topic": "Data Visualization Fundamentals & Advanced Core",
+      "description": "Techniques and tools (Tableau, PowerBI, Matplotlib) to present insights visually.",
+      "why_needed": "Preparing for Data Analyst requires Advanced in Data Visualization. Your current assessed level is No Knowledge (Gap: 4).",
+      "current_proficiency": 0,
+      "required_proficiency": 4,
+      "skill_gap": 4,
+      "importance": "Critical",
+      "priority": "Critical",
+      "difficulty": "Beginner → Advanced",
+      "estimated_duration": "8 weeks",
+      "prerequisites": [
+        "Python",
+        "Statistics & Probability"
+      ],
+      "learning_resource": {
+        "id": 12,
+        "title": "Data Storytelling & Visual Dashboards",
+        "url": "https://www.tableau.com/learn",
+        "resource_type": "Course",
+        "difficulty_level": "Beginner",
+        "platform": "Tableau Learn"
+      },
+      "status": "Not Started",
+      "completion_percentage": 0,
+      "created_at": "2026-09-22T13:56:13.059Z",
+      "updated_at": "2026-09-22T13:56:13.059Z"
+    },
+    {
+      "id": 66,
+      "roadmap_id": 1,
+      "student_id": 2,
+      "sequence": 6,
+      "skill_id": 14,
+      "skill_name": "Excel & Spreadsheet Modeling",
+      "skill_category": "Data & Analytics",
+      "topic": "Excel & Spreadsheet Modeling Fundamentals & Advanced Core",
+      "description": "Advanced spreadsheet functions, pivot tables, and analytical reporting.",
+      "why_needed": "Preparing for Data Analyst requires Advanced in Excel & Spreadsheet Modeling. Your current assessed level is No Knowledge (Gap: 4).",
+      "current_proficiency": 0,
+      "required_proficiency": 4,
+      "skill_gap": 4,
+      "importance": "Important",
+      "priority": "Medium",
+      "difficulty": "Beginner → Advanced",
+      "estimated_duration": "8 weeks",
+      "prerequisites": [
+        "Statistics & Probability"
+      ],
+      "learning_resource": null,
+      "status": "Not Started",
+      "completion_percentage": 0,
+      "created_at": "2026-09-22T13:56:13.059Z",
+      "updated_at": "2026-09-22T13:56:13.059Z"
+    },
+    {
+      "id": 67,
+      "roadmap_id": 1,
+      "student_id": 2,
+      "sequence": 7,
+      "skill_id": 26,
+      "skill_name": "NumPy",
+      "skill_category": "Data & Analytics",
+      "topic": "NumPy Foundations & Application",
+      "description": "Python library for numerical computing and array operations.",
+      "why_needed": "Preparing for Data Analyst requires Intermediate in NumPy. Your current assessed level is No Knowledge (Gap: 3).",
+      "current_proficiency": 0,
+      "required_proficiency": 3,
+      "skill_gap": 3,
+      "importance": "Important",
+      "priority": "Medium",
+      "difficulty": "Beginner → Intermediate",
+      "estimated_duration": "6 weeks",
+      "prerequisites": [],
+      "learning_resource": null,
+      "status": "Not Started",
+      "completion_percentage": 0,
+      "created_at": "2026-09-22T13:56:13.059Z",
+      "updated_at": "2026-09-22T13:56:13.059Z"
+    },
+    {
+      "id": 68,
+      "roadmap_id": 1,
+      "student_id": 2,
+      "sequence": 8,
+      "skill_id": 25,
+      "skill_name": "Pandas",
+      "skill_category": "Data & Analytics",
+      "topic": "Pandas Foundations & Application",
+      "description": "Python library for tabular data cleaning, transformation, and analysis.",
+      "why_needed": "Preparing for Data Analyst requires Intermediate in Pandas. Your current assessed level is No Knowledge (Gap: 3).",
+      "current_proficiency": 0,
+      "required_proficiency": 3,
+      "skill_gap": 3,
+      "importance": "Important",
+      "priority": "Medium",
+      "difficulty": "Beginner → Intermediate",
+      "estimated_duration": "6 weeks",
+      "prerequisites": [],
+      "learning_resource": null,
+      "status": "Not Started",
+      "completion_percentage": 0,
+      "created_at": "2026-09-22T13:56:13.059Z",
+      "updated_at": "2026-09-22T13:56:13.059Z"
+    },
+    {
+      "id": 69,
+      "roadmap_id": 1,
+      "student_id": 2,
+      "sequence": 9,
+      "skill_id": 2,
+      "skill_name": "JavaScript",
+      "skill_category": "Programming",
+      "topic": "JavaScript Targeted Skill Mastery",
+      "description": "Targeted module to close job gap of 3 level(s) for JavaScript.",
+      "why_needed": "Required by target job role at proficiency level 3. Current level is 0.",
+      "current_proficiency": 0,
+      "required_proficiency": 3,
+      "skill_gap": 3,
+      "importance": "Important",
+      "priority": "Medium",
+      "difficulty": "Intermediate",
+      "estimated_duration": "6 weeks",
+      "prerequisites": [
+        "HTML & CSS"
+      ],
+      "learning_resource": {
+        "id": 4,
+        "title": "Modern JavaScript from Beginning to Master",
+        "url": "https://developer.mozilla.org",
+        "resource_type": "Documentation",
+        "difficulty_level": "Beginner",
+        "platform": "MDN Web Docs"
+      },
+      "status": "Not Started",
+      "completion_percentage": 0,
+      "created_at": "2026-09-22T13:56:13.087Z",
+      "updated_at": "2026-09-22T13:56:13.087Z"
+    },
+    {
+      "id": 70,
+      "roadmap_id": 1,
+      "student_id": 2,
+      "sequence": 10,
+      "skill_id": 8,
+      "skill_name": "React",
+      "skill_category": "Web Development",
+      "topic": "React Targeted Skill Mastery",
+      "description": "Targeted module to close job gap of 3 level(s) for React.",
+      "why_needed": "Required by target job role at proficiency level 3. Current level is 0.",
+      "current_proficiency": 0,
+      "required_proficiency": 3,
+      "skill_gap": 3,
+      "importance": "Important",
+      "priority": "Medium",
+      "difficulty": "Intermediate",
+      "estimated_duration": "6 weeks",
+      "prerequisites": [
+        "JavaScript",
+        "HTML & CSS"
+      ],
+      "learning_resource": {
+        "id": 3,
+        "title": "Official React Docs & Interactive Guide",
+        "url": "https://react.dev",
+        "resource_type": "Documentation",
+        "difficulty_level": "Intermediate",
+        "platform": "React Org"
+      },
+      "status": "Not Started",
+      "completion_percentage": 0,
+      "created_at": "2026-09-22T13:56:13.087Z",
+      "updated_at": "2026-09-22T13:56:13.087Z"
+    },
+    {
+      "id": 71,
+      "roadmap_id": 1,
+      "student_id": 2,
+      "sequence": 11,
+      "skill_id": 9,
+      "skill_name": "Node.js",
+      "skill_category": "Web Development",
+      "topic": "Node.js Targeted Skill Mastery",
+      "description": "Targeted module to close job gap of 3 level(s) for Node.js.",
+      "why_needed": "Required by target job role at proficiency level 3. Current level is 0.",
+      "current_proficiency": 0,
+      "required_proficiency": 3,
+      "skill_gap": 3,
+      "importance": "Important",
+      "priority": "Medium",
+      "difficulty": "Intermediate",
+      "estimated_duration": "6 weeks",
+      "prerequisites": [
+        "JavaScript"
+      ],
+      "learning_resource": {
+        "id": 8,
+        "title": "Node.js Backend Architecture & Express Guides",
+        "url": "https://nodejs.org/en/docs",
+        "resource_type": "Documentation",
+        "difficulty_level": "Intermediate",
+        "platform": "Node.js Org"
+      },
+      "status": "Not Started",
+      "completion_percentage": 0,
+      "created_at": "2026-09-22T13:56:13.087Z",
+      "updated_at": "2026-09-22T13:56:13.087Z"
+    }
+  ],
+  "jobAnalyses": [
+    {
+      "id": 7,
+      "student_id": 2,
+      "job_title": "Full Stack Engineer",
+      "company": "Acme Corp",
+      "job_description": "We are seeking a Full Stack Engineer experienced with React, Node.js, TypeScript, SQL, and Docker.",
+      "match_score": 0,
+      "readiness_classification": "Beginner",
+      "identified_skills_count": 4,
+      "skills_satisfied_count": 0,
+      "skills_gap_count": 4,
+      "missing_skills_count": 4,
+      "major_gaps_count": 0,
+      "created_at": "2026-09-22T13:56:13.043Z",
+      "skills": [
+        {
+          "id": 25,
+          "analysis_id": 7,
+          "skill_id": 2,
+          "skill_name": "JavaScript",
+          "skill_category": "Programming",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        },
+        {
+          "id": 26,
+          "analysis_id": 7,
+          "skill_id": 7,
+          "skill_name": "SQL",
+          "skill_category": "Databases",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        },
+        {
+          "id": 27,
+          "analysis_id": 7,
+          "skill_id": 8,
+          "skill_name": "React",
+          "skill_category": "Web Development",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        },
+        {
+          "id": 28,
+          "analysis_id": 7,
+          "skill_id": 9,
+          "skill_name": "Node.js",
+          "skill_category": "Web Development",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        }
+      ],
+      "recommended_next_skills": [
+        {
+          "skill_name": "JavaScript",
+          "importance": "Important",
+          "gap": 3,
+          "reason": "Targeted improvement skill (gap of 3) that strengthens your technical profile for this opening."
+        },
+        {
+          "skill_name": "SQL",
+          "importance": "Important",
+          "gap": 3,
+          "reason": "Targeted improvement skill (gap of 3) that strengthens your technical profile for this opening."
+        },
+        {
+          "skill_name": "React",
+          "importance": "Important",
+          "gap": 3,
+          "reason": "Targeted improvement skill (gap of 3) that strengthens your technical profile for this opening."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "student_id": 2,
+      "job_title": "Full Stack Engineer",
+      "company": "Acme Corp",
+      "job_description": "We are seeking a Full Stack Engineer experienced with React, Node.js, TypeScript, SQL, and Docker.",
+      "match_score": 0,
+      "readiness_classification": "Beginner",
+      "identified_skills_count": 4,
+      "skills_satisfied_count": 0,
+      "skills_gap_count": 4,
+      "missing_skills_count": 4,
+      "major_gaps_count": 0,
+      "created_at": "2026-09-22T13:56:06.123Z",
+      "skills": [
+        {
+          "id": 21,
+          "analysis_id": 6,
+          "skill_id": 2,
+          "skill_name": "JavaScript",
+          "skill_category": "Programming",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        },
+        {
+          "id": 22,
+          "analysis_id": 6,
+          "skill_id": 7,
+          "skill_name": "SQL",
+          "skill_category": "Databases",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        },
+        {
+          "id": 23,
+          "analysis_id": 6,
+          "skill_id": 8,
+          "skill_name": "React",
+          "skill_category": "Web Development",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        },
+        {
+          "id": 24,
+          "analysis_id": 6,
+          "skill_id": 9,
+          "skill_name": "Node.js",
+          "skill_category": "Web Development",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        }
+      ],
+      "recommended_next_skills": [
+        {
+          "skill_name": "JavaScript",
+          "importance": "Important",
+          "gap": 3,
+          "reason": "Targeted improvement skill (gap of 3) that strengthens your technical profile for this opening."
+        },
+        {
+          "skill_name": "SQL",
+          "importance": "Important",
+          "gap": 3,
+          "reason": "Targeted improvement skill (gap of 3) that strengthens your technical profile for this opening."
+        },
+        {
+          "skill_name": "React",
+          "importance": "Important",
+          "gap": 3,
+          "reason": "Targeted improvement skill (gap of 3) that strengthens your technical profile for this opening."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "student_id": 2,
+      "job_title": "Full Stack Engineer",
+      "company": "Acme Corp",
+      "job_description": "We are seeking a Full Stack Engineer experienced with React, Node.js, TypeScript, SQL, and Docker.",
+      "match_score": 0,
+      "readiness_classification": "Beginner",
+      "identified_skills_count": 4,
+      "skills_satisfied_count": 0,
+      "skills_gap_count": 4,
+      "missing_skills_count": 4,
+      "major_gaps_count": 0,
+      "created_at": "2026-09-22T13:55:54.862Z",
+      "skills": [
+        {
+          "id": 17,
+          "analysis_id": 5,
+          "skill_id": 2,
+          "skill_name": "JavaScript",
+          "skill_category": "Programming",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        },
+        {
+          "id": 18,
+          "analysis_id": 5,
+          "skill_id": 7,
+          "skill_name": "SQL",
+          "skill_category": "Databases",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        },
+        {
+          "id": 19,
+          "analysis_id": 5,
+          "skill_id": 8,
+          "skill_name": "React",
+          "skill_category": "Web Development",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        },
+        {
+          "id": 20,
+          "analysis_id": 5,
+          "skill_id": 9,
+          "skill_name": "Node.js",
+          "skill_category": "Web Development",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        }
+      ],
+      "recommended_next_skills": [
+        {
+          "skill_name": "JavaScript",
+          "importance": "Important",
+          "gap": 3,
+          "reason": "Targeted improvement skill (gap of 3) that strengthens your technical profile for this opening."
+        },
+        {
+          "skill_name": "SQL",
+          "importance": "Important",
+          "gap": 3,
+          "reason": "Targeted improvement skill (gap of 3) that strengthens your technical profile for this opening."
+        },
+        {
+          "skill_name": "React",
+          "importance": "Important",
+          "gap": 3,
+          "reason": "Targeted improvement skill (gap of 3) that strengthens your technical profile for this opening."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "student_id": 2,
+      "job_title": "Full Stack Engineer",
+      "company": "Acme Corp",
+      "job_description": "We are seeking a Full Stack Engineer experienced with React, Node.js, TypeScript, SQL, and Docker.",
+      "match_score": 0,
+      "readiness_classification": "Beginner",
+      "identified_skills_count": 4,
+      "skills_satisfied_count": 0,
+      "skills_gap_count": 4,
+      "missing_skills_count": 4,
+      "major_gaps_count": 0,
+      "created_at": "2026-09-22T13:55:41.792Z",
+      "skills": [
+        {
+          "id": 13,
+          "analysis_id": 4,
+          "skill_id": 2,
+          "skill_name": "JavaScript",
+          "skill_category": "Programming",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        },
+        {
+          "id": 14,
+          "analysis_id": 4,
+          "skill_id": 7,
+          "skill_name": "SQL",
+          "skill_category": "Databases",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        },
+        {
+          "id": 15,
+          "analysis_id": 4,
+          "skill_id": 8,
+          "skill_name": "React",
+          "skill_category": "Web Development",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        },
+        {
+          "id": 16,
+          "analysis_id": 4,
+          "skill_id": 9,
+          "skill_name": "Node.js",
+          "skill_category": "Web Development",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        }
+      ],
+      "recommended_next_skills": [
+        {
+          "skill_name": "JavaScript",
+          "importance": "Important",
+          "gap": 3,
+          "reason": "Targeted improvement skill (gap of 3) that strengthens your technical profile for this opening."
+        },
+        {
+          "skill_name": "SQL",
+          "importance": "Important",
+          "gap": 3,
+          "reason": "Targeted improvement skill (gap of 3) that strengthens your technical profile for this opening."
+        },
+        {
+          "skill_name": "React",
+          "importance": "Important",
+          "gap": 3,
+          "reason": "Targeted improvement skill (gap of 3) that strengthens your technical profile for this opening."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "student_id": 2,
+      "job_title": "Full Stack Engineer",
+      "company": "Acme Corp",
+      "job_description": "We are seeking a Full Stack Engineer experienced with React, Node.js, TypeScript, SQL, and Docker.",
+      "match_score": 0,
+      "readiness_classification": "Beginner",
+      "identified_skills_count": 4,
+      "skills_satisfied_count": 0,
+      "skills_gap_count": 4,
+      "missing_skills_count": 4,
+      "major_gaps_count": 0,
+      "created_at": "2026-09-22T13:55:05.551Z",
+      "skills": [
+        {
+          "id": 9,
+          "analysis_id": 3,
+          "skill_id": 2,
+          "skill_name": "JavaScript",
+          "skill_category": "Programming",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        },
+        {
+          "id": 10,
+          "analysis_id": 3,
+          "skill_id": 7,
+          "skill_name": "SQL",
+          "skill_category": "Databases",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        },
+        {
+          "id": 11,
+          "analysis_id": 3,
+          "skill_id": 8,
+          "skill_name": "React",
+          "skill_category": "Web Development",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        },
+        {
+          "id": 12,
+          "analysis_id": 3,
+          "skill_id": 9,
+          "skill_name": "Node.js",
+          "skill_category": "Web Development",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        }
+      ],
+      "recommended_next_skills": [
+        {
+          "skill_name": "JavaScript",
+          "importance": "Important",
+          "gap": 3,
+          "reason": "Targeted improvement skill (gap of 3) that strengthens your technical profile for this opening."
+        },
+        {
+          "skill_name": "SQL",
+          "importance": "Important",
+          "gap": 3,
+          "reason": "Targeted improvement skill (gap of 3) that strengthens your technical profile for this opening."
+        },
+        {
+          "skill_name": "React",
+          "importance": "Important",
+          "gap": 3,
+          "reason": "Targeted improvement skill (gap of 3) that strengthens your technical profile for this opening."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "student_id": 2,
+      "job_title": "Full Stack Engineer",
+      "company": "Acme Corp",
+      "job_description": "We are seeking a Full Stack Engineer experienced with React, Node.js, TypeScript, SQL, and Docker.",
+      "match_score": 0,
+      "readiness_classification": "Beginner",
+      "identified_skills_count": 4,
+      "skills_satisfied_count": 0,
+      "skills_gap_count": 4,
+      "missing_skills_count": 4,
+      "major_gaps_count": 0,
+      "created_at": "2026-09-22T13:52:23.409Z",
+      "skills": [
+        {
+          "id": 5,
+          "analysis_id": 2,
+          "skill_id": 2,
+          "skill_name": "JavaScript",
+          "skill_category": "Programming",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        },
+        {
+          "id": 6,
+          "analysis_id": 2,
+          "skill_id": 7,
+          "skill_name": "SQL",
+          "skill_category": "Databases",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        },
+        {
+          "id": 7,
+          "analysis_id": 2,
+          "skill_id": 8,
+          "skill_name": "React",
+          "skill_category": "Web Development",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        },
+        {
+          "id": 8,
+          "analysis_id": 2,
+          "skill_id": 9,
+          "skill_name": "Node.js",
+          "skill_category": "Web Development",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        }
+      ],
+      "recommended_next_skills": [
+        {
+          "skill_name": "JavaScript",
+          "importance": "Important",
+          "gap": 3,
+          "reason": "Targeted improvement skill (gap of 3) that strengthens your technical profile for this opening."
+        },
+        {
+          "skill_name": "SQL",
+          "importance": "Important",
+          "gap": 3,
+          "reason": "Targeted improvement skill (gap of 3) that strengthens your technical profile for this opening."
+        },
+        {
+          "skill_name": "React",
+          "importance": "Important",
+          "gap": 3,
+          "reason": "Targeted improvement skill (gap of 3) that strengthens your technical profile for this opening."
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "student_id": 2,
+      "job_title": "Full Stack Engineer",
+      "company": "Acme Corp",
+      "job_description": "We are seeking a Full Stack Engineer experienced with React, Node.js, TypeScript, SQL, and Docker.",
+      "match_score": 0,
+      "readiness_classification": "Beginner",
+      "identified_skills_count": 4,
+      "skills_satisfied_count": 0,
+      "skills_gap_count": 4,
+      "missing_skills_count": 4,
+      "major_gaps_count": 0,
+      "created_at": "2026-09-22T13:50:57.224Z",
+      "skills": [
+        {
+          "id": 1,
+          "analysis_id": 1,
+          "skill_id": 2,
+          "skill_name": "JavaScript",
+          "skill_category": "Programming",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        },
+        {
+          "id": 2,
+          "analysis_id": 1,
+          "skill_id": 7,
+          "skill_name": "SQL",
+          "skill_category": "Databases",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        },
+        {
+          "id": 3,
+          "analysis_id": 1,
+          "skill_id": 8,
+          "skill_name": "React",
+          "skill_category": "Web Development",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        },
+        {
+          "id": 4,
+          "analysis_id": 1,
+          "skill_id": 9,
+          "skill_name": "Node.js",
+          "skill_category": "Web Development",
+          "required_proficiency": 3,
+          "student_proficiency": 0,
+          "skill_gap": 3,
+          "status": "Missing",
+          "is_core": false,
+          "importance": "Important",
+          "is_estimated": true
+        }
+      ],
+      "recommended_next_skills": [
+        {
+          "skill_name": "JavaScript",
+          "importance": "Important",
+          "gap": 3,
+          "reason": "Targeted improvement skill (gap of 3) that strengthens your technical profile for this opening."
+        },
+        {
+          "skill_name": "SQL",
+          "importance": "Important",
+          "gap": 3,
+          "reason": "Targeted improvement skill (gap of 3) that strengthens your technical profile for this opening."
+        },
+        {
+          "skill_name": "React",
+          "importance": "Important",
+          "gap": 3,
+          "reason": "Targeted improvement skill (gap of 3) that strengthens your technical profile for this opening."
+        }
+      ]
+    }
+  ],
+  "userAchievements": [
+    {
+      "id": 1,
+      "user_id": 2,
+      "achievement_id": "career_decider",
+      "unlocked_at": "2026-09-22T13:50:57.264Z"
+    },
+    {
+      "id": 2,
+      "user_id": 2,
+      "achievement_id": "job_explorer",
+      "unlocked_at": "2026-09-22T13:50:57.264Z"
+    },
+    {
+      "id": 3,
+      "user_id": 2,
+      "achievement_id": "resume_ready",
+      "unlocked_at": "2026-09-22T13:50:57.264Z"
+    }
+  ],
+  "activityEvents": [
+    {
+      "id": 20,
+      "user_id": 2,
+      "type": "resume_analyzed",
+      "title": "Analyzed Resume: manual_entry_resume.txt",
+      "description": "Extracted 4 technical competencies and tools.",
+      "timestamp": "2026-09-22T13:56:15.151Z"
+    },
+    {
+      "id": 19,
+      "user_id": 2,
+      "type": "roadmap_progress",
+      "title": "Roadmap Updated with Job Gaps",
+      "description": "Added 3 job requirement(s) from \"Full Stack Engineer\" to roadmap.",
+      "timestamp": "2026-09-22T13:56:13.088Z"
+    },
+    {
+      "id": 18,
+      "user_id": 2,
+      "type": "skill_updated",
+      "title": "Skill Added: Python",
+      "description": "Recorded proficiency Intermediate (3/5).",
+      "timestamp": "2026-09-22T13:56:13.072Z"
+    },
+    {
+      "id": 17,
+      "user_id": 2,
+      "type": "roadmap_progress",
+      "title": "Roadmap: SQL",
+      "description": "Updated status to In Progress (50%).",
+      "timestamp": "2026-09-22T13:56:13.065Z"
+    },
+    {
+      "id": 16,
+      "user_id": 2,
+      "type": "job_analyzed",
+      "title": "Analyzed Job: Full Stack Engineer",
+      "description": "Calculated 0% match across 4 extracted job requirements.",
+      "timestamp": "2026-09-22T13:56:13.044Z"
+    },
+    {
+      "id": 15,
+      "user_id": 2,
+      "type": "career_selected",
+      "title": "Target Career Selected: Data Analyst",
+      "description": "Aligned learning roadmap and skill benchmarks with Data Analyst.",
+      "timestamp": "2026-09-22T13:56:13.031Z"
+    },
+    {
+      "id": 14,
+      "user_id": 2,
+      "type": "resume_analyzed",
+      "title": "Analyzed Resume: manual_entry_resume.txt",
+      "description": "Extracted 4 technical competencies and tools.",
+      "timestamp": "2026-09-22T13:56:07.861Z"
+    },
+    {
+      "id": 13,
+      "user_id": 2,
+      "type": "roadmap_progress",
+      "title": "Roadmap Updated with Job Gaps",
+      "description": "Added 3 job requirement(s) from \"Full Stack Engineer\" to roadmap.",
+      "timestamp": "2026-09-22T13:56:06.183Z"
+    },
+    {
+      "id": 12,
+      "user_id": 2,
+      "type": "skill_updated",
+      "title": "Skill Added: Python",
+      "description": "Recorded proficiency Intermediate (3/5).",
+      "timestamp": "2026-09-22T13:56:06.167Z"
+    },
+    {
+      "id": 11,
+      "user_id": 2,
+      "type": "roadmap_progress",
+      "title": "Roadmap: SQL",
+      "description": "Updated status to In Progress (50%).",
+      "timestamp": "2026-09-22T13:56:06.158Z"
+    },
+    {
+      "id": 10,
+      "user_id": 2,
+      "type": "job_analyzed",
+      "title": "Analyzed Job: Full Stack Engineer",
+      "description": "Calculated 0% match across 4 extracted job requirements.",
+      "timestamp": "2026-09-22T13:56:06.124Z"
+    },
+    {
+      "id": 9,
+      "user_id": 2,
+      "type": "career_selected",
+      "title": "Target Career Selected: Data Analyst",
+      "description": "Aligned learning roadmap and skill benchmarks with Data Analyst.",
+      "timestamp": "2026-09-22T13:56:06.108Z"
+    },
+    {
+      "id": 8,
+      "user_id": 2,
+      "type": "resume_analyzed",
+      "title": "Analyzed Resume: manual_entry_resume.txt",
+      "description": "Extracted 4 technical competencies and tools.",
+      "timestamp": "2026-09-22T13:55:58.831Z"
+    },
+    {
+      "id": 7,
+      "user_id": 2,
+      "type": "resume_analyzed",
+      "title": "Analyzed Resume: manual_entry_resume.txt",
+      "description": "Extracted 4 technical competencies and tools.",
+      "timestamp": "2026-09-22T13:55:44.933Z"
+    },
+    {
+      "id": 6,
+      "user_id": 2,
+      "type": "resume_analyzed",
+      "title": "Analyzed Resume: manual_entry_resume.txt",
+      "description": "Extracted 4 technical competencies and tools.",
+      "timestamp": "2026-09-22T13:55:08.017Z"
+    },
+    {
+      "id": 5,
+      "user_id": 2,
+      "type": "resume_analyzed",
+      "title": "Analyzed Resume: manual_entry_resume.txt",
+      "description": "Extracted 4 technical competencies and tools.",
+      "timestamp": "2026-09-22T13:52:23.458Z"
+    },
+    {
+      "id": 4,
+      "user_id": 2,
+      "type": "achievement_unlocked",
+      "title": "Unlocked: Resume Ready",
+      "description": "Completed your first Resume / CV Analysis",
+      "timestamp": "2026-09-22T13:50:57.265Z"
+    },
+    {
+      "id": 3,
+      "user_id": 2,
+      "type": "achievement_unlocked",
+      "title": "Unlocked: Job Explorer",
+      "description": "Completed your first Job Description Analysis",
+      "timestamp": "2026-09-22T13:50:57.264Z"
+    },
+    {
+      "id": 2,
+      "user_id": 2,
+      "type": "achievement_unlocked",
+      "title": "Unlocked: Career Decider",
+      "description": "Selected your target career role",
+      "timestamp": "2026-09-22T13:50:57.264Z"
+    },
+    {
+      "id": 1,
+      "user_id": 2,
+      "type": "resume_analyzed",
+      "title": "Analyzed Resume: manual_entry_resume.txt",
+      "description": "Extracted 4 technical competencies and tools.",
+      "timestamp": "2026-09-22T13:50:57.264Z"
+    }
+  ],
+  "progressSnapshots": [
+    {
+      "id": 1,
+      "user_id": 2,
+      "timestamp": "2026-09-22T13:56:06.109Z",
+      "readiness_percentage": 10,
+      "skills_logged": 1,
+      "roadmap_completion": 5,
+      "target_career_title": "Data Analyst",
+      "trigger_event": "Target Career Selected: Data Analyst"
+    },
+    {
+      "id": 2,
+      "user_id": 2,
+      "timestamp": "2026-09-22T13:56:06.125Z",
+      "readiness_percentage": 10,
+      "skills_logged": 1,
+      "roadmap_completion": 5,
+      "target_career_title": "Data Analyst",
+      "trigger_event": "Job Analyzed: Full Stack Engineer"
+    },
+    {
+      "id": 3,
+      "user_id": 2,
+      "timestamp": "2026-09-22T13:56:06.159Z",
+      "readiness_percentage": 10,
+      "skills_logged": 1,
+      "roadmap_completion": 6,
+      "target_career_title": "Data Analyst",
+      "trigger_event": "Roadmap Progress: SQL"
+    },
+    {
+      "id": 4,
+      "user_id": 2,
+      "timestamp": "2026-09-22T13:56:06.168Z",
+      "readiness_percentage": 10,
+      "skills_logged": 1,
+      "roadmap_completion": 6,
+      "target_career_title": "Data Analyst",
+      "trigger_event": "Skill Added: Python"
+    },
+    {
+      "id": 5,
+      "user_id": 2,
+      "timestamp": "2026-09-22T13:56:06.184Z",
+      "readiness_percentage": 10,
+      "skills_logged": 1,
+      "roadmap_completion": 5,
+      "target_career_title": "Data Analyst",
+      "trigger_event": "Job Requirements Added (3)"
+    },
+    {
+      "id": 6,
+      "user_id": 2,
+      "timestamp": "2026-09-22T13:56:13.032Z",
+      "readiness_percentage": 10,
+      "skills_logged": 1,
+      "roadmap_completion": 5,
+      "target_career_title": "Data Analyst",
+      "trigger_event": "Target Career Selected: Data Analyst"
+    },
+    {
+      "id": 7,
+      "user_id": 2,
+      "timestamp": "2026-09-22T13:56:13.045Z",
+      "readiness_percentage": 10,
+      "skills_logged": 1,
+      "roadmap_completion": 5,
+      "target_career_title": "Data Analyst",
+      "trigger_event": "Job Analyzed: Full Stack Engineer"
+    },
+    {
+      "id": 8,
+      "user_id": 2,
+      "timestamp": "2026-09-22T13:56:13.065Z",
+      "readiness_percentage": 10,
+      "skills_logged": 1,
+      "roadmap_completion": 6,
+      "target_career_title": "Data Analyst",
+      "trigger_event": "Roadmap Progress: SQL"
+    },
+    {
+      "id": 9,
+      "user_id": 2,
+      "timestamp": "2026-09-22T13:56:13.073Z",
+      "readiness_percentage": 10,
+      "skills_logged": 1,
+      "roadmap_completion": 6,
+      "target_career_title": "Data Analyst",
+      "trigger_event": "Skill Added: Python"
+    },
+    {
+      "id": 10,
+      "user_id": 2,
+      "timestamp": "2026-09-22T13:56:13.089Z",
+      "readiness_percentage": 10,
+      "skills_logged": 1,
+      "roadmap_completion": 5,
+      "target_career_title": "Data Analyst",
+      "trigger_event": "Job Requirements Added (3)"
+    }
+  ],
+  "resumeAnalyses": [
+    {
+      "id": 7,
+      "user_id": 2,
+      "created_at": "2026-09-22T13:56:15.150Z",
+      "filename": "manual_entry_resume.txt",
+      "filesize": 208,
+      "raw_text_length": 208,
+      "parsed_skills": [
+        {
+          "skill_id": 2,
+          "skill_name": "JavaScript",
+          "skill_category": "Programming",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...Developer with 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Educati..."
+        },
+        {
+          "skill_id": 7,
+          "skill_name": "SQL",
+          "skill_category": "Databases",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...perience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of Scien..."
+        },
+        {
+          "skill_id": 8,
+          "skill_name": "React",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...th 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bac..."
+        },
+        {
+          "skill_id": 9,
+          "skill_name": "Node.js",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...ars of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of..."
+        }
+      ],
+      "skills_in_resume_not_in_profile": [
+        {
+          "skill_id": 2,
+          "skill_name": "JavaScript",
+          "skill_category": "Programming",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...Developer with 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Educati..."
+        },
+        {
+          "skill_id": 7,
+          "skill_name": "SQL",
+          "skill_category": "Databases",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...perience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of Scien..."
+        },
+        {
+          "skill_id": 8,
+          "skill_name": "React",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...th 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bac..."
+        },
+        {
+          "skill_id": 9,
+          "skill_name": "Node.js",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...ars of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of..."
+        }
+      ],
+      "skills_in_profile_not_in_resume": [
+        {
+          "skill_id": 1,
+          "skill_name": "Python",
+          "skill_category": "Programming",
+          "in_profile": true,
+          "current_proficiency": 3,
+          "in_resume": false,
+          "frequency_in_resume": 0
+        }
+      ],
+      "education_mentions": [],
+      "certifications_mentions": [],
+      "tools_mentions": [
+        "Git"
+      ]
+    },
+    {
+      "id": 6,
+      "user_id": 2,
+      "created_at": "2026-09-22T13:56:07.860Z",
+      "filename": "manual_entry_resume.txt",
+      "filesize": 208,
+      "raw_text_length": 208,
+      "parsed_skills": [
+        {
+          "skill_id": 2,
+          "skill_name": "JavaScript",
+          "skill_category": "Programming",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...Developer with 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Educati..."
+        },
+        {
+          "skill_id": 7,
+          "skill_name": "SQL",
+          "skill_category": "Databases",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...perience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of Scien..."
+        },
+        {
+          "skill_id": 8,
+          "skill_name": "React",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...th 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bac..."
+        },
+        {
+          "skill_id": 9,
+          "skill_name": "Node.js",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...ars of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of..."
+        }
+      ],
+      "skills_in_resume_not_in_profile": [
+        {
+          "skill_id": 2,
+          "skill_name": "JavaScript",
+          "skill_category": "Programming",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...Developer with 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Educati..."
+        },
+        {
+          "skill_id": 7,
+          "skill_name": "SQL",
+          "skill_category": "Databases",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...perience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of Scien..."
+        },
+        {
+          "skill_id": 8,
+          "skill_name": "React",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...th 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bac..."
+        },
+        {
+          "skill_id": 9,
+          "skill_name": "Node.js",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...ars of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of..."
+        }
+      ],
+      "skills_in_profile_not_in_resume": [
+        {
+          "skill_id": 1,
+          "skill_name": "Python",
+          "skill_category": "Programming",
+          "in_profile": true,
+          "current_proficiency": 3,
+          "in_resume": false,
+          "frequency_in_resume": 0
+        }
+      ],
+      "education_mentions": [],
+      "certifications_mentions": [],
+      "tools_mentions": [
+        "Git"
+      ]
+    },
+    {
+      "id": 5,
+      "user_id": 2,
+      "created_at": "2026-09-22T13:55:58.830Z",
+      "filename": "manual_entry_resume.txt",
+      "filesize": 208,
+      "raw_text_length": 208,
+      "parsed_skills": [
+        {
+          "skill_id": 2,
+          "skill_name": "JavaScript",
+          "skill_category": "Programming",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...Developer with 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Educati..."
+        },
+        {
+          "skill_id": 7,
+          "skill_name": "SQL",
+          "skill_category": "Databases",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...perience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of Scien..."
+        },
+        {
+          "skill_id": 8,
+          "skill_name": "React",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...th 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bac..."
+        },
+        {
+          "skill_id": 9,
+          "skill_name": "Node.js",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...ars of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of..."
+        }
+      ],
+      "skills_in_resume_not_in_profile": [
+        {
+          "skill_id": 2,
+          "skill_name": "JavaScript",
+          "skill_category": "Programming",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...Developer with 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Educati..."
+        },
+        {
+          "skill_id": 7,
+          "skill_name": "SQL",
+          "skill_category": "Databases",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...perience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of Scien..."
+        },
+        {
+          "skill_id": 8,
+          "skill_name": "React",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...th 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bac..."
+        },
+        {
+          "skill_id": 9,
+          "skill_name": "Node.js",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...ars of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of..."
+        }
+      ],
+      "skills_in_profile_not_in_resume": [
+        {
+          "skill_id": 1,
+          "skill_name": "Python",
+          "skill_category": "Programming",
+          "in_profile": true,
+          "current_proficiency": 3,
+          "in_resume": false,
+          "frequency_in_resume": 0
+        }
+      ],
+      "education_mentions": [],
+      "certifications_mentions": [],
+      "tools_mentions": [
+        "Git"
+      ]
+    },
+    {
+      "id": 4,
+      "user_id": 2,
+      "created_at": "2026-09-22T13:55:44.932Z",
+      "filename": "manual_entry_resume.txt",
+      "filesize": 208,
+      "raw_text_length": 208,
+      "parsed_skills": [
+        {
+          "skill_id": 2,
+          "skill_name": "JavaScript",
+          "skill_category": "Programming",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...Developer with 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Educati..."
+        },
+        {
+          "skill_id": 7,
+          "skill_name": "SQL",
+          "skill_category": "Databases",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...perience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of Scien..."
+        },
+        {
+          "skill_id": 8,
+          "skill_name": "React",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...th 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bac..."
+        },
+        {
+          "skill_id": 9,
+          "skill_name": "Node.js",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...ars of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of..."
+        }
+      ],
+      "skills_in_resume_not_in_profile": [
+        {
+          "skill_id": 2,
+          "skill_name": "JavaScript",
+          "skill_category": "Programming",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...Developer with 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Educati..."
+        },
+        {
+          "skill_id": 7,
+          "skill_name": "SQL",
+          "skill_category": "Databases",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...perience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of Scien..."
+        },
+        {
+          "skill_id": 8,
+          "skill_name": "React",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...th 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bac..."
+        },
+        {
+          "skill_id": 9,
+          "skill_name": "Node.js",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...ars of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of..."
+        }
+      ],
+      "skills_in_profile_not_in_resume": [
+        {
+          "skill_id": 1,
+          "skill_name": "Python",
+          "skill_category": "Programming",
+          "in_profile": true,
+          "current_proficiency": 3,
+          "in_resume": false,
+          "frequency_in_resume": 0
+        }
+      ],
+      "education_mentions": [],
+      "certifications_mentions": [],
+      "tools_mentions": [
+        "Git"
+      ]
+    },
+    {
+      "id": 3,
+      "user_id": 2,
+      "created_at": "2026-09-22T13:55:08.016Z",
+      "filename": "manual_entry_resume.txt",
+      "filesize": 208,
+      "raw_text_length": 208,
+      "parsed_skills": [
+        {
+          "skill_id": 2,
+          "skill_name": "JavaScript",
+          "skill_category": "Programming",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...Developer with 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Educati..."
+        },
+        {
+          "skill_id": 7,
+          "skill_name": "SQL",
+          "skill_category": "Databases",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...perience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of Scien..."
+        },
+        {
+          "skill_id": 8,
+          "skill_name": "React",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...th 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bac..."
+        },
+        {
+          "skill_id": 9,
+          "skill_name": "Node.js",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...ars of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of..."
+        }
+      ],
+      "skills_in_resume_not_in_profile": [
+        {
+          "skill_id": 2,
+          "skill_name": "JavaScript",
+          "skill_category": "Programming",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...Developer with 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Educati..."
+        },
+        {
+          "skill_id": 7,
+          "skill_name": "SQL",
+          "skill_category": "Databases",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...perience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of Scien..."
+        },
+        {
+          "skill_id": 8,
+          "skill_name": "React",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...th 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bac..."
+        },
+        {
+          "skill_id": 9,
+          "skill_name": "Node.js",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...ars of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of..."
+        }
+      ],
+      "skills_in_profile_not_in_resume": [
+        {
+          "skill_id": 1,
+          "skill_name": "Python",
+          "skill_category": "Programming",
+          "in_profile": true,
+          "current_proficiency": 3,
+          "in_resume": false,
+          "frequency_in_resume": 0
+        }
+      ],
+      "education_mentions": [],
+      "certifications_mentions": [],
+      "tools_mentions": [
+        "Git"
+      ]
+    },
+    {
+      "id": 2,
+      "user_id": 2,
+      "created_at": "2026-09-22T13:52:23.456Z",
+      "filename": "manual_entry_resume.txt",
+      "filesize": 208,
+      "raw_text_length": 208,
+      "parsed_skills": [
+        {
+          "skill_id": 2,
+          "skill_name": "JavaScript",
+          "skill_category": "Programming",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...Developer with 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Educati..."
+        },
+        {
+          "skill_id": 7,
+          "skill_name": "SQL",
+          "skill_category": "Databases",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...perience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of Scien..."
+        },
+        {
+          "skill_id": 8,
+          "skill_name": "React",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...th 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bac..."
+        },
+        {
+          "skill_id": 9,
+          "skill_name": "Node.js",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...ars of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of..."
+        }
+      ],
+      "skills_in_resume_not_in_profile": [
+        {
+          "skill_id": 2,
+          "skill_name": "JavaScript",
+          "skill_category": "Programming",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...Developer with 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Educati..."
+        },
+        {
+          "skill_id": 7,
+          "skill_name": "SQL",
+          "skill_category": "Databases",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...perience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of Scien..."
+        },
+        {
+          "skill_id": 8,
+          "skill_name": "React",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...th 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bac..."
+        },
+        {
+          "skill_id": 9,
+          "skill_name": "Node.js",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...ars of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of..."
+        }
+      ],
+      "skills_in_profile_not_in_resume": [],
+      "education_mentions": [],
+      "certifications_mentions": [],
+      "tools_mentions": [
+        "Git"
+      ]
+    },
+    {
+      "id": 1,
+      "user_id": 2,
+      "created_at": "2026-09-22T13:50:57.263Z",
+      "filename": "manual_entry_resume.txt",
+      "filesize": 208,
+      "raw_text_length": 208,
+      "parsed_skills": [
+        {
+          "skill_id": 2,
+          "skill_name": "JavaScript",
+          "skill_category": "Programming",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...Developer with 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Educati..."
+        },
+        {
+          "skill_id": 7,
+          "skill_name": "SQL",
+          "skill_category": "Databases",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...perience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of Scien..."
+        },
+        {
+          "skill_id": 8,
+          "skill_name": "React",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...th 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bac..."
+        },
+        {
+          "skill_id": 9,
+          "skill_name": "Node.js",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...ars of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of..."
+        }
+      ],
+      "skills_in_resume_not_in_profile": [
+        {
+          "skill_id": 2,
+          "skill_name": "JavaScript",
+          "skill_category": "Programming",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...Developer with 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Educati..."
+        },
+        {
+          "skill_id": 7,
+          "skill_name": "SQL",
+          "skill_category": "Databases",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...perience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of Scien..."
+        },
+        {
+          "skill_id": 8,
+          "skill_name": "React",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...th 2 years of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bac..."
+        },
+        {
+          "skill_id": 9,
+          "skill_name": "Node.js",
+          "skill_category": "Web Development",
+          "in_profile": false,
+          "current_proficiency": 0,
+          "in_resume": true,
+          "frequency_in_resume": 1,
+          "context": "...ars of experience in JavaScript, React, Node.js, SQL, Git, and REST APIs. Education: Bachelor of..."
+        }
+      ],
+      "skills_in_profile_not_in_resume": [],
+      "education_mentions": [],
+      "certifications_mentions": [],
+      "tools_mentions": [
+        "Git"
+      ]
+    }
+  ],
+  "nextUserId": 11,
+  "nextSkillId": 39,
+  "nextCareerId": 10,
+  "nextRoleSkillId": 42,
+  "nextStudentSkillId": 2,
+  "nextResourceId": 18,
+  "nextPrerequisiteId": 18,
+  "nextRoadmapId": 2,
+  "nextRoadmapItemId": 72,
+  "nextJobAnalysisId": 8,
+  "nextJobAnalysisSkillId": 29,
+  "nextUserAchievementId": 4,
+  "nextActivityEventId": 21,
+  "nextProgressSnapshotId": 11,
+  "nextResumeAnalysisId": 8
+}

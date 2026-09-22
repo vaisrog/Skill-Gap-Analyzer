@@ -1,8 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
+import { MobileNavProvider } from './context/MobileNavContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { Toast } from './components/Toast';
+import { ErrorBoundary } from './components/ErrorBoundary';
 
 import { LandingPage } from './pages/LandingPage';
 import { LoginPage } from './pages/LoginPage';
@@ -16,6 +18,8 @@ import { AnalysisPlaceholderPage } from './pages/AnalysisPlaceholderPage';
 import { RoadmapPage } from './pages/RoadmapPage';
 import { JobAnalyzerPage } from './pages/JobAnalyzerPage';
 import { StudentAnalyticsPage } from './pages/StudentAnalyticsPage';
+import { ResumeAnalyzerPage } from './pages/ResumeAnalyzerPage';
+import { CareerComparisonPage } from './pages/CareerComparisonPage';
 
 import { AdminDashboard } from './pages/admin/AdminDashboard';
 import { AdminCareers } from './pages/admin/AdminCareers';
@@ -28,44 +32,50 @@ export default function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
-        <Routes>
-          {/* Public Routes */}
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+        <MobileNavProvider>
+          <ErrorBoundary>
+            <Routes>
+              {/* Public Routes */}
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
 
-          {/* Student workspace */}
-          <Route element={<ProtectedRoute allowedRole="student" />}>
-            <Route path="/dashboard" element={<StudentDashboard />} />
-            <Route path="/my-skills" element={<MySkillsPage />} />
-            <Route path="/choose-career" element={<ChooseCareerPage />} />
-            <Route path="/careers/:careerId" element={<CareerDetailsPage />} />
-            <Route path="/analysis" element={<AnalysisPlaceholderPage />} />
-            <Route path="/roadmap" element={<RoadmapPage />} />
-            <Route path="/job-analyzer" element={<JobAnalyzerPage />} />
-            <Route path="/analytics" element={<StudentAnalyticsPage />} />
-          </Route>
+              {/* Student workspace */}
+              <Route element={<ProtectedRoute allowedRole="student" />}>
+                <Route path="/dashboard" element={<StudentDashboard />} />
+                <Route path="/my-skills" element={<MySkillsPage />} />
+                <Route path="/choose-career" element={<ChooseCareerPage />} />
+                <Route path="/careers/:careerId" element={<CareerDetailsPage />} />
+                <Route path="/analysis" element={<AnalysisPlaceholderPage />} />
+                <Route path="/roadmap" element={<RoadmapPage />} />
+                <Route path="/job-analyzer" element={<JobAnalyzerPage />} />
+                <Route path="/resume-analyzer" element={<ResumeAnalyzerPage />} />
+                <Route path="/compare-careers" element={<CareerComparisonPage />} />
+                <Route path="/analytics" element={<StudentAnalyticsPage />} />
+              </Route>
 
-          {/* General authenticated routes */}
-          <Route element={<ProtectedRoute />}>
-            <Route path="/profile" element={<ProfilePage />} />
-          </Route>
+              {/* General authenticated routes */}
+              <Route element={<ProtectedRoute />}>
+                <Route path="/profile" element={<ProfilePage />} />
+              </Route>
 
-          {/* Protected Admin Routes */}
-          <Route element={<ProtectedRoute allowedRole="admin" />}>
-            <Route path="/admin" element={<AdminDashboard />} />
-            <Route path="/admin/careers" element={<AdminCareers />} />
-            <Route path="/admin/skills" element={<AdminSkills />} />
-            <Route path="/admin/prerequisites" element={<AdminPrerequisites />} />
-            <Route path="/admin/resources" element={<AdminResources />} />
-            <Route path="/admin/students" element={<AdminStudents />} />
-          </Route>
+              {/* Protected Admin Routes */}
+              <Route element={<ProtectedRoute allowedRole="admin" />}>
+                <Route path="/admin" element={<AdminDashboard />} />
+                <Route path="/admin/careers" element={<AdminCareers />} />
+                <Route path="/admin/skills" element={<AdminSkills />} />
+                <Route path="/admin/prerequisites" element={<AdminPrerequisites />} />
+                <Route path="/admin/resources" element={<AdminResources />} />
+                <Route path="/admin/students" element={<AdminStudents />} />
+              </Route>
 
-          {/* Catch-all fallback */}
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+              {/* Catch-all fallback */}
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </ErrorBoundary>
 
-        <Toast />
+          <Toast />
+        </MobileNavProvider>
       </BrowserRouter>
     </AuthProvider>
   );

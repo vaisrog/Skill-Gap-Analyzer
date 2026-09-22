@@ -1,13 +1,37 @@
 import express, { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
+import multer from 'multer';
 import { store, User } from './store';
 import { buildSkillGapAnalysis, PROFICIENCY_LABELS } from './analysis';
 import { generateOrGetStudentRoadmap } from './roadmap';
 import { extractSkillsFromJobDescription } from './jobAnalyzer';
+import { generateSmartRecommendations } from './recommendations';
+import { parseResumeText, analyzeResumeSkills, matchResumeWithJob } from './resumeAnalyzer';
+import { generateCareerGuidance } from './aiGuidance';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'skill_gap_analyzer_jwt_secret_key_2026';
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// Multer in-memory upload configuration for safe resume processing
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 5 * 1024 * 1024 }, // 5MB max
+  fileFilter: (_req, file, cb) => {
+    const ext = file.originalname.split('.').pop()?.toLowerCase() || '';
+    const allowed = ['pdf', 'docx', 'txt', 'text', 'markdown', 'md'];
+    if (
+      allowed.includes(ext) ||
+      file.mimetype.includes('pdf') ||
+      file.mimetype.includes('text') ||
+      file.mimetype.includes('officedocument')
+    ) {
+      cb(null, true);
+    } else {
+      cb(new Error('Unsupported file format. Please upload a PDF, DOCX, or TXT file.'));
+    }
+  },
+});
 
 export const apiRouter = express.Router();
 
@@ -188,6 +212,46 @@ apiRouter.get('/api/careers', (req, res) => {
   });
 });
 
+// Career Comparison (must be registered before parameterized /:id route)
+apiRouter.get('/api/careers/compare', authenticateToken, (req, res) => {
+  const studentId = req.user!.id;
+  const idsParam = req.query.ids as string;
+  if (!idsParam) {
+    return res.status(400).json({ error: 'Career IDs required for comparison (e.g. ?ids=1,2).' });
+  }
+
+  const careerIds = idsParam
+    .split(',')
+    .map((id) => parseInt(id.trim(), 10))
+    .filter((id) => !isNaN(id) && id > 0);
+
+  if (careerIds.length < 2 || careerIds.length > 4) {
+    return res.status(400).json({ error: 'Please select between 2 and 4 careers to compare.' });
+  }
+
+  const comparison = store.compareCareers(studentId, careerIds);
+  const normalizedCareers = comparison.careers.map((c) => ({
+    ...c,
+    career_id: c.id,
+    career_title: c.title,
+    readiness_percentage: c.match_readiness_percentage,
+    satisfied_skills_count: c.skills.filter((s) => s.is_satisfied).length,
+    total_skills_count: c.required_skills_count || c.skills.length,
+    roadmap_estimated_effort: `${c.estimated_workload_weeks} weeks`,
+  }));
+
+  const normalizedTransferable = comparison.transferable_skills.map((ts) => ({
+    ...ts,
+    shared_careers: ts.career_titles,
+    shared_in_career_count: ts.careers_count,
+  }));
+
+  return res.status(200).json({
+    careers: normalizedCareers,
+    transferable_skills: normalizedTransferable,
+  });
+});
+
 apiRouter.get('/api/careers/:id', (req, res) => {
   const roleId = parseInt(req.params.id, 10);
   const role = store.getCareerById(roleId);
@@ -251,9 +315,11 @@ apiRouter.post('/api/careers', authenticateToken, requireAdmin, (req, res) => {
     skills: skillsData,
   });
 
+  const roleDict = store.careerToDict(role, true);
   return res.status(201).json({
     message: 'Career role created successfully.',
-    career_role: store.careerToDict(role, true),
+    career: roleDict,
+    career_role: roleDict,
   });
 });
 
@@ -277,9 +343,11 @@ apiRouter.put('/api/careers/:id', authenticateToken, requireAdmin, (req, res) =>
   }
 
   const updated = store.updateCareer(roleId, { title, description, icon });
+  const updatedDict = store.careerToDict(updated!, true);
   return res.status(200).json({
     message: 'Career role updated.',
-    career_role: store.careerToDict(updated!, true),
+    career: updatedDict,
+    career_role: updatedDict,
   });
 });
 
@@ -540,6 +608,12 @@ apiRouter.put('/api/users/profile', authenticateToken, (req, res) => {
   }
 
   user.updated_at = new Date().toISOString();
+  store.save();
+  store.checkAndUnlockAchievements(user.id);
+  if (user.role === 'student') {
+    store.recordProgressSnapshot(user.id, 'profile_updated');
+  }
+
   return res.status(200).json({
     message: 'Profile updated successfully.',
     user: store.userToDict(user),
@@ -562,6 +636,8 @@ apiRouter.put('/api/users/target-career', authenticateToken, requireStudent, (re
   if (careerIdRaw === null || careerIdRaw === undefined) {
     user.target_career_id = null;
     user.updated_at = new Date().toISOString();
+    store.save();
+    store.recordProgressSnapshot(user.id, 'Target Career Cleared');
     return res.status(200).json({
       message: 'Target career cleared.',
       user: store.userToDict(user),
@@ -580,6 +656,17 @@ apiRouter.put('/api/users/target-career', authenticateToken, requireStudent, (re
 
   user.target_career_id = careerId;
   user.updated_at = new Date().toISOString();
+  store.save();
+
+  store.logActivity(
+    user.id,
+    'career_selected',
+    `Target Career Selected: ${career.title}`,
+    `Aligned learning roadmap and skill benchmarks with ${career.title}.`
+  );
+  store.checkAndUnlockAchievements(user.id);
+  store.recordProgressSnapshot(user.id, `Target Career Selected: ${career.title}`);
+
   return res.status(200).json({
     message: `Target career set to "${career.title}".`,
     user: store.userToDict(user),
@@ -631,6 +718,15 @@ apiRouter.post('/api/student-skills', authenticateToken, requireStudent, (req, r
   const { entry, wasCreated } = store.addOrUpdateStudentSkill(req.user!.id, skillId, proficiency);
   const label = PROFICIENCY_LABELS[proficiency];
 
+  store.logActivity(
+    req.user!.id,
+    'skill_updated',
+    `Skill Added: ${skill.name}`,
+    `Recorded proficiency ${label} (${proficiency}/5).`
+  );
+  store.checkAndUnlockAchievements(req.user!.id);
+  store.recordProgressSnapshot(req.user!.id, `Skill Added: ${skill.name}`);
+
   return res.status(wasCreated ? 201 : 200).json({
     message: wasCreated
       ? `Skill "${skill.name}" added with proficiency ${label}.`
@@ -662,6 +758,17 @@ apiRouter.put('/api/student-skills/:id', authenticateToken, requireStudent, (req
   }
 
   const updated = store.updateStudentSkillProficiency(entryId, proficiency);
+  const skill = store.getSkillById(existing.skill_id);
+
+  store.logActivity(
+    req.user!.id,
+    'skill_updated',
+    `Skill Updated: ${skill?.name || 'Proficiency'}`,
+    `Updated proficiency to ${PROFICIENCY_LABELS[proficiency]} (${proficiency}/5).`
+  );
+  store.checkAndUnlockAchievements(req.user!.id);
+  store.recordProgressSnapshot(req.user!.id, `Skill Updated: ${skill?.name || 'Skill'}`);
+
   return res.status(200).json({
     message: `Proficiency updated to ${PROFICIENCY_LABELS[proficiency]}.`,
     skill: store.studentSkillToDict(updated!),
@@ -682,6 +789,15 @@ apiRouter.delete('/api/student-skills/:id', authenticateToken, requireStudent, (
 
   const skill = store.getSkillById(existing.skill_id);
   store.deleteStudentSkill(entryId);
+
+  store.logActivity(
+    req.user!.id,
+    'skill_updated',
+    `Skill Removed: ${skill ? skill.name : 'Skill'}`,
+    `Removed from your skill profile.`
+  );
+  store.checkAndUnlockAchievements(req.user!.id);
+  store.recordProgressSnapshot(req.user!.id, `Skill Removed: ${skill?.name || 'Skill'}`);
 
   return res.status(200).json({
     message: `Skill "${skill ? skill.name : 'Unknown'}" removed from your profile.`,
@@ -856,6 +972,15 @@ apiRouter.put('/api/roadmap/items/:id', authenticateToken, requireStudent, (req,
     return res.status(500).json({ error: 'Failed to update roadmap item.' });
   }
 
+  store.logActivity(
+    student.id,
+    'roadmap_progress',
+    `Roadmap: ${updateResult.item.skill_name}`,
+    `Updated status to ${updateResult.item.status} (${updateResult.item.completion_percentage}%).`
+  );
+  store.checkAndUnlockAchievements(student.id);
+  store.recordProgressSnapshot(student.id, `Roadmap Progress: ${updateResult.item.skill_name}`);
+
   // Determine updated next recommended skill
   const siblingItems = store.getRoadmapItems(updateResult.roadmap.id);
   const nextRecommended = siblingItems.find((item) => item.status !== 'Completed') || null;
@@ -987,6 +1112,17 @@ apiRouter.post('/api/job-analysis/:id/add-to-roadmap', authenticateToken, requir
   }
 
   const result = store.appendJobSkillsToRoadmap(student.id, analysis.skills);
+
+  if (result.addedCount > 0) {
+    store.logActivity(
+      student.id,
+      'roadmap_progress',
+      `Roadmap Updated with Job Gaps`,
+      `Added ${result.addedCount} job requirement(s) from "${analysis.job_title}" to roadmap.`
+    );
+    store.checkAndUnlockAchievements(student.id);
+    store.recordProgressSnapshot(student.id, `Job Requirements Added (${result.addedCount})`);
+  }
 
   return res.status(200).json({
     message: result.message,
@@ -1222,5 +1358,219 @@ apiRouter.delete('/api/admin/prerequisites/:id', authenticateToken, requireAdmin
 
   return res.status(200).json({ message: 'Prerequisite relationship removed successfully.' });
 });
+
+// ==================== Phase 6 Routes ====================
+
+// 1. Smart Recommendations
+apiRouter.get('/api/recommendations', authenticateToken, (req, res) => {
+  const studentId = req.user!.id;
+  const result = generateSmartRecommendations(studentId);
+  return res.status(200).json(result);
+});
+
+apiRouter.get('/api/recommendations/next', authenticateToken, (req, res) => {
+  const studentId = req.user!.id;
+  const result = generateSmartRecommendations(studentId);
+  return res.status(200).json({
+    has_target_career: result.has_target_career,
+    target_career: result.target_career,
+    career_skills_satisfied: result.career_skills_satisfied,
+    top_recommendation: result.top_recommendation,
+  });
+});
+
+// 3. Resume / CV Skill Analyzer
+apiRouter.post('/api/resume/analyze', authenticateToken, upload.single('resume_file'), async (req, res) => {
+  const studentId = req.user!.id;
+
+  try {
+    let rawText = '';
+    let filename = 'pasted_resume.txt';
+    let filesize = 0;
+
+    if (req.file) {
+      filename = req.file.originalname;
+      filesize = req.file.size;
+      rawText = await parseResumeText(req.file.buffer, req.file.mimetype, req.body.resume_text);
+    } else if (req.body.resume_text && String(req.body.resume_text).trim().length > 0) {
+      rawText = String(req.body.resume_text).trim();
+      filename = req.body.filename || 'manual_entry_resume.txt';
+      filesize = Buffer.byteLength(rawText, 'utf8');
+    } else {
+      return res.status(400).json({
+        error: 'Please upload a resume file (PDF, DOCX, TXT) or paste resume text to analyze.',
+      });
+    }
+
+    if (rawText.length < 30) {
+      return res.status(400).json({
+        error: 'Resume content appears too short. Please provide a substantive resume document.',
+      });
+    }
+
+    const analyzed = analyzeResumeSkills(studentId, rawText, filename, filesize);
+
+    // Persist to store
+    const savedRecord = store.saveResumeAnalysis(studentId, {
+      filename: analyzed.filename,
+      filesize: analyzed.filesize,
+      raw_text_length: rawText.length,
+      parsed_skills: analyzed.parsed_skills,
+      skills_in_resume_not_in_profile: analyzed.skills_in_resume_not_in_profile,
+      skills_in_profile_not_in_resume: analyzed.skills_in_profile_not_in_resume,
+      education_mentions: analyzed.education_mentions,
+      certifications_mentions: analyzed.certifications_mentions,
+      tools_mentions: analyzed.tools_mentions,
+    });
+
+    return res.status(200).json({
+      message: 'Resume analyzed successfully.',
+      analysis: savedRecord,
+    });
+  } catch (err: any) {
+    console.error('Error analyzing resume:', err);
+    return res.status(500).json({
+      error: err?.message || 'Failed to process resume. Please verify the document format.',
+    });
+  }
+});
+
+apiRouter.get('/api/resume/latest', authenticateToken, (req, res) => {
+  const studentId = req.user!.id;
+  const record = store.getLatestResumeAnalysis(studentId);
+  if (!record) {
+    return res.status(200).json({ analysis: null });
+  }
+  return res.status(200).json({ analysis: record });
+});
+
+apiRouter.get('/api/resume/:id', authenticateToken, (req, res) => {
+  const studentId = req.user!.id;
+  const id = parseInt(req.params.id, 10);
+  const record = store.getResumeAnalysisById(id, studentId);
+  if (!record) {
+    return res.status(404).json({ error: 'Resume analysis record not found.' });
+  }
+  return res.status(200).json({ analysis: record });
+});
+
+// Explicit confirmation endpoint to add selected skills to profile
+apiRouter.post('/api/resume/apply-skills', authenticateToken, (req, res) => {
+  const studentId = req.user!.id;
+  const { skills } = req.body;
+
+  if (!Array.isArray(skills) || skills.length === 0) {
+    return res.status(400).json({ error: 'Please select at least one skill to apply to your profile.' });
+  }
+
+  let updatedCount = 0;
+  for (const item of skills) {
+    const skillId = parseInt(item.skill_id, 10);
+    const proficiency = parseInt(item.proficiency, 10) || 1;
+
+    if (!isNaN(skillId) && proficiency >= 1 && proficiency <= 5) {
+      store.addOrUpdateStudentSkill(studentId, skillId, proficiency);
+      updatedCount++;
+    }
+  }
+
+  store.logActivity(
+    studentId,
+    'skill_updated',
+    `Updated Skills from Resume`,
+    `Added/updated ${updatedCount} skill(s) based on your resume extraction review.`
+  );
+
+  store.recordProgressSnapshot(studentId, `Resume Skills Applied (${updatedCount})`);
+  store.checkAndUnlockAchievements(studentId);
+
+  return res.status(200).json({
+    message: `Successfully updated ${updatedCount} skill(s) in your profile.`,
+    updated_count: updatedCount,
+  });
+});
+
+// Match resume against an analyzed job description
+apiRouter.get('/api/resume/job-match/:jobId', authenticateToken, (req, res) => {
+  const studentId = req.user!.id;
+  const jobId = parseInt(req.params.jobId, 10);
+  if (isNaN(jobId)) {
+    return res.status(400).json({ error: 'Invalid job analysis ID.' });
+  }
+
+  try {
+    const match = matchResumeWithJob(studentId, jobId);
+    return res.status(200).json(match);
+  } catch (err: any) {
+    return res.status(400).json({ error: err.message || 'Failed to compare resume with job description.' });
+  }
+});
+
+// 4. AI-Assisted Career Guidance
+apiRouter.post('/api/ai/career-guidance', authenticateToken, async (req, res) => {
+  const studentId = req.user!.id;
+  const { question } = req.body;
+
+  if (!question || String(question).trim().length === 0) {
+    return res.status(400).json({ error: 'Please provide a question for the career advisor.' });
+  }
+
+  try {
+    const response = await generateCareerGuidance(studentId, String(question).trim());
+    return res.status(200).json(response);
+  } catch (err: any) {
+    console.error('Error generating career guidance:', err);
+    return res.status(500).json({
+      error: 'Career guidance assistant is temporarily unavailable. Please try again later.',
+    });
+  }
+});
+
+// 5. Achievements
+apiRouter.get('/api/achievements', authenticateToken, (_req, res) => {
+  const all = store.getAllAchievements();
+  return res.status(200).json({ achievements: all });
+});
+
+apiRouter.get('/api/achievements/user', authenticateToken, (req, res) => {
+  const studentId = req.user!.id;
+  // Trigger check first to capture any recently earned achievements
+  store.checkAndUnlockAchievements(studentId);
+  const userAchievements = store.getUserAchievements(studentId);
+  const normalizedAchievements = userAchievements.map((ua) => ({
+    id: ua.achievement.id,
+    name: ua.achievement.name,
+    title: ua.achievement.name,
+    description: ua.achievement.description,
+    category: ua.achievement.category,
+    icon: ua.achievement.icon,
+    unlocked: ua.unlocked,
+    unlocked_at: ua.unlocked_at,
+    achievement: ua.achievement,
+  }));
+  const unlockedCount = normalizedAchievements.filter((a) => a.unlocked).length;
+
+  return res.status(200).json({
+    total: normalizedAchievements.length,
+    unlocked_count: unlockedCount,
+    percentage: Math.round((unlockedCount / normalizedAchievements.length) * 100),
+    achievements: normalizedAchievements,
+  });
+});
+
+// 6. Activity Center & Progress Insights
+apiRouter.get('/api/activity', authenticateToken, (req, res) => {
+  const studentId = req.user!.id;
+  const limit = parseInt(req.query.limit as string, 10) || 20;
+  const activities = store.getUserActivity(studentId, limit);
+  return res.status(200).json({ activities });
+});
+
+apiRouter.get('/api/progress/history', authenticateToken, (req, res) => {
+  const studentId = req.user!.id;
+  const history = store.getUserProgressHistory(studentId);
+  return res.status(200).json(history);
+});
+
 
 

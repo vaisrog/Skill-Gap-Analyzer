@@ -154,6 +154,90 @@ export interface RoadmapItem {
   updated_at: string;
 }
 
+// Phase 6 Interfaces
+export interface Achievement {
+  id: string;
+  name: string;
+  description: string;
+  icon: string;
+  category: 'roadmap' | 'skill' | 'job' | 'resume' | 'career';
+}
+
+export interface UserAchievement {
+  id: number;
+  user_id: number;
+  achievement_id: string;
+  unlocked_at: string;
+}
+
+export interface ActivityEvent {
+  id: number;
+  user_id: number;
+  type:
+    | 'roadmap_completed'
+    | 'roadmap_progress'
+    | 'achievement_unlocked'
+    | 'job_analyzed'
+    | 'resume_analyzed'
+    | 'skill_updated'
+    | 'career_changed'
+    | 'career_selected';
+  title: string;
+  description: string;
+  timestamp: string;
+}
+
+export interface ProgressSnapshot {
+  id: number;
+  user_id: number;
+  timestamp: string;
+  readiness_percentage: number;
+  skills_logged: number;
+  roadmap_completion: number;
+  target_career_title?: string;
+  trigger_event: string;
+}
+
+export interface ResumeSkillMatch {
+  skill_id: number;
+  skill_name: string;
+  skill_category: string;
+  in_profile: boolean;
+  current_proficiency: number;
+  in_resume: boolean;
+  frequency_in_resume: number;
+  context?: string;
+}
+
+export interface ResumeAnalysisRecord {
+  id: number;
+  user_id: number;
+  filename: string;
+  filesize: number;
+  created_at: string;
+  raw_text_length: number;
+  parsed_skills: ResumeSkillMatch[];
+  skills_in_resume_not_in_profile: ResumeSkillMatch[];
+  skills_in_profile_not_in_resume: ResumeSkillMatch[];
+  education_mentions: string[];
+  certifications_mentions: string[];
+  tools_mentions: string[];
+}
+
+export const DEFAULT_ACHIEVEMENTS: Achievement[] = [
+  { id: 'first_step', name: 'First Step', description: 'Completed your first roadmap milestone', icon: 'Compass', category: 'roadmap' },
+  { id: 'skill_builder', name: 'Skill Builder', description: 'Completed 5 roadmap milestone items', icon: 'Layers', category: 'roadmap' },
+  { id: 'roadmap_explorer', name: 'Roadmap Explorer', description: 'Reached 25% roadmap completion', icon: 'Map', category: 'roadmap' },
+  { id: 'halfway_there', name: 'Halfway There', description: 'Reached 50% roadmap completion', icon: 'Flame', category: 'roadmap' },
+  { id: 'almost_ready', name: 'Almost Ready', description: 'Reached 75% roadmap completion', icon: 'TrendingUp', category: 'roadmap' },
+  { id: 'career_ready', name: 'Career Ready', description: 'Completed 100% of required roadmap skills', icon: 'Award', category: 'roadmap' },
+  { id: 'skill_starter', name: 'Skill Starter', description: 'Logged at least 3 skills in your profile', icon: 'BookOpen', category: 'skill' },
+  { id: 'skill_master', name: 'Skill Master', description: 'Achieved Level 5 (Expert) in any skill', icon: 'Zap', category: 'skill' },
+  { id: 'career_decider', name: 'Career Decider', description: 'Selected your target career role', icon: 'Target', category: 'career' },
+  { id: 'job_explorer', name: 'Job Explorer', description: 'Completed your first Job Description Analysis', icon: 'FileSearch', category: 'job' },
+  { id: 'resume_ready', name: 'Resume Ready', description: 'Completed your first Resume / CV Analysis', icon: 'FileText', category: 'resume' },
+];
+
 class Store {
   users: User[] = [];
   skills: Skill[] = [];
@@ -165,6 +249,10 @@ class Store {
   roadmaps: Roadmap[] = [];
   roadmapItems: RoadmapItem[] = [];
   jobAnalyses: JobAnalysis[] = [];
+  userAchievements: UserAchievement[] = [];
+  activityEvents: ActivityEvent[] = [];
+  progressSnapshots: ProgressSnapshot[] = [];
+  resumeAnalyses: ResumeAnalysisRecord[] = [];
 
   private nextUserId = 1;
   private nextSkillId = 1;
@@ -177,6 +265,10 @@ class Store {
   private nextRoadmapItemId = 1;
   private nextJobAnalysisId = 1;
   private nextJobAnalysisSkillId = 1;
+  private nextUserAchievementId = 1;
+  private nextActivityEventId = 1;
+  private nextProgressSnapshotId = 1;
+  private nextResumeAnalysisId = 1;
 
   private dataFilePath = path.join(process.cwd(), 'data', 'store.json');
 
@@ -206,6 +298,10 @@ class Store {
         roadmaps: this.roadmaps,
         roadmapItems: this.roadmapItems,
         jobAnalyses: this.jobAnalyses,
+        userAchievements: this.userAchievements,
+        activityEvents: this.activityEvents,
+        progressSnapshots: this.progressSnapshots,
+        resumeAnalyses: this.resumeAnalyses,
         nextUserId: this.nextUserId,
         nextSkillId: this.nextSkillId,
         nextCareerId: this.nextCareerId,
@@ -217,6 +313,10 @@ class Store {
         nextRoadmapItemId: this.nextRoadmapItemId,
         nextJobAnalysisId: this.nextJobAnalysisId,
         nextJobAnalysisSkillId: this.nextJobAnalysisSkillId,
+        nextUserAchievementId: this.nextUserAchievementId,
+        nextActivityEventId: this.nextActivityEventId,
+        nextProgressSnapshotId: this.nextProgressSnapshotId,
+        nextResumeAnalysisId: this.nextResumeAnalysisId,
       };
       fs.writeFileSync(this.dataFilePath, JSON.stringify(data, null, 2), 'utf-8');
     } catch (e) {
@@ -240,6 +340,10 @@ class Store {
           this.roadmaps = data.roadmaps || [];
           this.roadmapItems = data.roadmapItems || [];
           this.jobAnalyses = data.jobAnalyses || [];
+          this.userAchievements = data.userAchievements || [];
+          this.activityEvents = data.activityEvents || [];
+          this.progressSnapshots = data.progressSnapshots || [];
+          this.resumeAnalyses = data.resumeAnalyses || [];
           this.nextUserId = data.nextUserId || (Math.max(...this.users.map((u: any) => u.id), 0) + 1);
           this.nextSkillId = data.nextSkillId || (Math.max(...this.skills.map((s: any) => s.id), 0) + 1);
           this.nextCareerId = data.nextCareerId || (Math.max(...this.careerRoles.map((c: any) => c.id), 0) + 1);
@@ -251,6 +355,10 @@ class Store {
           this.nextRoadmapItemId = data.nextRoadmapItemId || (Math.max(...this.roadmapItems.map((i: any) => i.id), 0) + 1);
           this.nextJobAnalysisId = data.nextJobAnalysisId || (Math.max(...this.jobAnalyses.map((j: any) => j.id), 0) + 1);
           this.nextJobAnalysisSkillId = data.nextJobAnalysisSkillId || 1;
+          this.nextUserAchievementId = data.nextUserAchievementId || (Math.max(...this.userAchievements.map((a: any) => a.id), 0) + 1);
+          this.nextActivityEventId = data.nextActivityEventId || (Math.max(...this.activityEvents.map((e: any) => e.id), 0) + 1);
+          this.nextProgressSnapshotId = data.nextProgressSnapshotId || (Math.max(...this.progressSnapshots.map((p: any) => p.id), 0) + 1);
+          this.nextResumeAnalysisId = data.nextResumeAnalysisId || (Math.max(...this.resumeAnalyses.map((r: any) => r.id), 0) + 1);
           return true;
         }
       }
@@ -639,6 +747,14 @@ class Store {
   }
 
   // Skill methods
+  getAllSkills(): Skill[] {
+    return [...this.skills];
+  }
+
+  getResourcesBySkillId(skillId: number): LearningResource[] {
+    return this.learningResources.filter((r) => r.skill_id === skillId);
+  }
+
   getSkillById(id: number): Skill | undefined {
     return this.skills.find((s) => s.id === id);
   }
@@ -1262,6 +1378,16 @@ class Store {
 
     this.jobAnalyses.unshift(analysis);
     this.save();
+
+    this.logActivity(
+      studentId,
+      'job_analyzed',
+      `Analyzed Job: ${analysis.job_title}`,
+      `Calculated ${analysis.match_score}% match across ${analysis.identified_skills_count} extracted job requirements.`
+    );
+    this.checkAndUnlockAchievements(studentId);
+    this.recordProgressSnapshot(studentId, `Job Analyzed: ${analysis.job_title}`);
+
     return analysis;
   }
 
@@ -1636,10 +1762,409 @@ class Store {
         job_analyses: totalJobAnalyses,
         avg_readiness: avgReadiness,
       },
+      total_students: totalStudents,
+      total_careers: totalCareers,
+      total_skills: totalSkills,
+      total_resources: totalResources,
+      total_roadmaps: totalRoadmaps,
+      total_job_analyses: totalJobAnalyses,
+      avg_readiness: avgReadiness,
       career_popularity: careerPopularity,
       readiness_distribution: readinessDistribution,
       common_skill_gaps: commonSkillGaps,
       roadmap_brackets: roadmapBrackets,
+    };
+  }
+
+  // ==================== Phase 6: Achievements, Activity, Progress & Resume ====================
+
+  getAllAchievements(): Achievement[] {
+    return DEFAULT_ACHIEVEMENTS;
+  }
+
+  getUserAchievements(userId: number): Array<{
+    achievement: Achievement;
+    unlocked: boolean;
+    unlocked_at: string | null;
+  }> {
+    const userUnlocks = new Map<string, string>();
+    this.userAchievements
+      .filter((ua) => ua.user_id === userId)
+      .forEach((ua) => userUnlocks.set(ua.achievement_id, ua.unlocked_at));
+
+    return DEFAULT_ACHIEVEMENTS.map((ach) => ({
+      achievement: ach,
+      unlocked: userUnlocks.has(ach.id),
+      unlocked_at: userUnlocks.get(ach.id) || null,
+    }));
+  }
+
+  checkAndUnlockAchievements(userId: number): Achievement[] {
+    const student = this.getUserById(userId);
+    if (!student || student.role !== 'student') return [];
+
+    const existingUnlockedIds = new Set(
+      this.userAchievements.filter((ua) => ua.user_id === userId).map((ua) => ua.achievement_id)
+    );
+
+    const newlyUnlocked: Achievement[] = [];
+    const now = new Date().toISOString();
+
+    const unlock = (achId: string) => {
+      if (existingUnlockedIds.has(achId)) return;
+      const ach = DEFAULT_ACHIEVEMENTS.find((a) => a.id === achId);
+      if (!ach) return;
+
+      this.userAchievements.push({
+        id: this.nextUserAchievementId++,
+        user_id: userId,
+        achievement_id: achId,
+        unlocked_at: now,
+      });
+      existingUnlockedIds.add(achId);
+      newlyUnlocked.push(ach);
+
+      // Log activity event
+      this.logActivity(userId, 'achievement_unlocked', `Unlocked: ${ach.name}`, ach.description);
+    };
+
+    // 1. Roadmap milestones
+    const roadmap = this.getRoadmapByStudentId(userId);
+    if (roadmap) {
+      const items = this.getRoadmapItems(roadmap.id);
+      const completedCount = items.filter((i) => i.status === 'Completed').length;
+      const completionPct = roadmap.overall_completion || 0;
+
+      if (completedCount >= 1) unlock('first_step');
+      if (completedCount >= 5) unlock('skill_builder');
+      if (completionPct >= 25) unlock('roadmap_explorer');
+      if (completionPct >= 50) unlock('halfway_there');
+      if (completionPct >= 75) unlock('almost_ready');
+      if (completionPct >= 100 && items.length > 0) unlock('career_ready');
+    }
+
+    // 2. Profile & skills milestones
+    const studentSkills = this.getStudentSkills(userId);
+    if (studentSkills.length >= 3) unlock('skill_starter');
+    if (studentSkills.some((s) => s.proficiency === 5)) unlock('skill_master');
+
+    // 3. Career decision
+    if (student.target_career_id) unlock('career_decider');
+
+    // 4. Job exploration
+    const jobAnalyses = this.getJobAnalysesByStudentId(userId);
+    if (jobAnalyses.length >= 1) unlock('job_explorer');
+
+    // 5. Resume analysis
+    const resumeAnalyses = this.resumeAnalyses.filter((r) => r.user_id === userId);
+    if (resumeAnalyses.length >= 1) unlock('resume_ready');
+
+    if (newlyUnlocked.length > 0) {
+      this.save();
+    }
+
+    return newlyUnlocked;
+  }
+
+  logActivity(
+    userId: number,
+    type: ActivityEvent['type'],
+    title: string,
+    description: string
+  ): ActivityEvent {
+    const event: ActivityEvent = {
+      id: this.nextActivityEventId++,
+      user_id: userId,
+      type,
+      title,
+      description,
+      timestamp: new Date().toISOString(),
+    };
+
+    this.activityEvents.unshift(event);
+    // Keep max 100 per user
+    const userEvents = this.activityEvents.filter((e) => e.user_id === userId);
+    if (userEvents.length > 100) {
+      const toRemove = userEvents.slice(100);
+      const toRemoveIds = new Set(toRemove.map((e) => e.id));
+      this.activityEvents = this.activityEvents.filter((e) => !toRemoveIds.has(e.id));
+    }
+
+    this.save();
+    return event;
+  }
+
+  getUserActivity(userId: number, limit: number = 20): ActivityEvent[] {
+    return this.activityEvents
+      .filter((e) => e.user_id === userId)
+      .slice(0, limit);
+  }
+
+  recordProgressSnapshot(userId: number, triggerEvent: string): ProgressSnapshot | null {
+    const student = this.getUserById(userId);
+    if (!student || student.role !== 'student') return null;
+
+    let readinessPct = 0;
+    let targetCareerTitle: string | undefined;
+
+    if (student.target_career_id) {
+      const career = this.getCareerById(student.target_career_id);
+      targetCareerTitle = career?.title;
+      const roleSkills = this.getRoleSkillsByRoleId(student.target_career_id);
+      const studentSkills = this.getStudentSkills(userId);
+      const studentSkillsMap = new Map(studentSkills.map((s) => [s.skill_id, s.proficiency]));
+
+      if (roleSkills.length > 0) {
+        let totalReq = 0;
+        let totalAcquired = 0;
+        roleSkills.forEach((rs) => {
+          totalReq += rs.required_proficiency;
+          totalAcquired += Math.min(rs.required_proficiency, studentSkillsMap.get(rs.skill_id) || 0);
+        });
+        readinessPct = totalReq > 0 ? Math.round((totalAcquired / totalReq) * 100) : 0;
+      }
+    }
+
+    const roadmap = this.getRoadmapByStudentId(userId);
+    const roadmapComp = roadmap ? roadmap.overall_completion : 0;
+    const skillsLogged = this.getStudentSkills(userId).length;
+
+    const snapshot: ProgressSnapshot = {
+      id: this.nextProgressSnapshotId++,
+      user_id: userId,
+      timestamp: new Date().toISOString(),
+      readiness_percentage: readinessPct,
+      skills_logged: skillsLogged,
+      roadmap_completion: roadmapComp,
+      target_career_title: targetCareerTitle,
+      trigger_event: triggerEvent,
+    };
+
+    this.progressSnapshots.push(snapshot);
+    // Keep max 50 snapshots per user
+    const userSnaps = this.progressSnapshots.filter((s) => s.user_id === userId);
+    if (userSnaps.length > 50) {
+      const toRemove = userSnaps.slice(0, userSnaps.length - 50);
+      const toRemoveIds = new Set(toRemove.map((s) => s.id));
+      this.progressSnapshots = this.progressSnapshots.filter((s) => !toRemoveIds.has(s.id));
+    }
+
+    this.save();
+    return snapshot;
+  }
+
+  captureProgressSnapshot(userId: number, triggerEvent: string): ProgressSnapshot | null {
+    return this.recordProgressSnapshot(userId, triggerEvent);
+  }
+
+  getUserProgressHistory(userId: number): {
+    snapshots: ProgressSnapshot[];
+    insight: string | null;
+  } {
+    const userSnaps = this.progressSnapshots
+      .filter((s) => s.user_id === userId)
+      .sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
+
+    let insight: string | null = null;
+    if (userSnaps.length >= 2) {
+      const oldest = userSnaps[0];
+      const newest = userSnaps[userSnaps.length - 1];
+      const diff = newest.readiness_percentage - oldest.readiness_percentage;
+      if (diff > 0) {
+        insight = `You improved from ${oldest.readiness_percentage}% to ${newest.readiness_percentage}% readiness (+${diff}%) based on your recorded skill mastery and milestone completions.`;
+      } else if (newest.roadmap_completion > oldest.roadmap_completion) {
+        insight = `Roadmap progress increased from ${oldest.roadmap_completion}% to ${newest.roadmap_completion}% across your recent learning milestones.`;
+      }
+    }
+
+    return {
+      snapshots: userSnaps,
+      insight,
+    };
+  }
+
+  saveResumeAnalysis(
+    userId: number,
+    data: Omit<ResumeAnalysisRecord, 'id' | 'user_id' | 'created_at'>
+  ): ResumeAnalysisRecord {
+    const record: ResumeAnalysisRecord = {
+      id: this.nextResumeAnalysisId++,
+      user_id: userId,
+      created_at: new Date().toISOString(),
+      ...data,
+    };
+
+    this.resumeAnalyses.unshift(record);
+    this.save();
+
+    // Log activity
+    this.logActivity(
+      userId,
+      'resume_analyzed',
+      `Analyzed Resume: ${data.filename}`,
+      `Extracted ${data.parsed_skills.length} technical competencies and tools.`
+    );
+
+    // Check achievements
+    this.checkAndUnlockAchievements(userId);
+
+    return record;
+  }
+
+  getLatestResumeAnalysis(userId: number): ResumeAnalysisRecord | null {
+    const list = this.resumeAnalyses.filter((r) => r.user_id === userId);
+    return list.length > 0 ? list[0] : null;
+  }
+
+  getResumeAnalysisById(id: number, userId: number): ResumeAnalysisRecord | null {
+    return this.resumeAnalyses.find((r) => r.id === id && r.user_id === userId) || null;
+  }
+
+  compareCareers(
+    studentId: number,
+    careerIds: number[]
+  ): {
+    careers: Array<{
+      id: number;
+      title: string;
+      category: string;
+      description: string;
+      average_salary: string | null;
+      required_skills_count: number;
+      match_readiness_percentage: number;
+      major_gaps_count: number;
+      missing_skills_count: number;
+      estimated_workload_weeks: number;
+      skills: Array<{
+        skill_id: number;
+        skill_name: string;
+        skill_category: string;
+        required_proficiency: number;
+        student_proficiency: number;
+        skill_gap: number;
+        importance: 'Critical' | 'Important' | 'Optional';
+        is_satisfied: boolean;
+      }>;
+    }>;
+    transferable_skills: Array<{
+      skill_id: number;
+      skill_name: string;
+      skill_category: string;
+      careers_count: number;
+      career_titles: string[];
+      student_proficiency: number;
+      max_required_proficiency: number;
+      explanation: string;
+    }>;
+  } {
+    const studentSkills = this.getStudentSkills(studentId);
+    const studentSkillsMap = new Map<number, number>();
+    studentSkills.forEach((ss) => studentSkillsMap.set(ss.skill_id, ss.proficiency));
+
+    const comparedCareers = [];
+    const skillAppearanceMap = new Map<
+      number,
+      {
+        skill_id: number;
+        skill_name: string;
+        skill_category: string;
+        career_titles: string[];
+        max_required: number;
+      }
+    >();
+
+    for (const cid of careerIds) {
+      const career = this.getCareerById(cid);
+      if (!career) continue;
+
+      const roleSkills = this.getRoleSkillsByRoleId(career.id);
+      let totalReqScore = 0;
+      let totalAcquiredScore = 0;
+      let majorGaps = 0;
+      let missingSkills = 0;
+      let totalWeeks = 0;
+
+      const skillList = roleSkills.map((rs) => {
+        const sk = this.getSkillById(rs.skill_id);
+        const skillName = sk ? sk.name : 'Unknown Skill';
+        const skillCategory = sk ? sk.category : 'General';
+        const studentProf = studentSkillsMap.get(rs.skill_id) || 0;
+        const gap = Math.max(0, rs.required_proficiency - studentProf);
+
+        totalReqScore += rs.required_proficiency;
+        totalAcquiredScore += Math.min(rs.required_proficiency, studentProf);
+
+        if (gap >= 2) majorGaps++;
+        if (studentProf === 0) missingSkills++;
+        totalWeeks += Math.max(0, gap * 2);
+
+        // Track appearance across careers for transferable skills
+        if (!skillAppearanceMap.has(rs.skill_id)) {
+          skillAppearanceMap.set(rs.skill_id, {
+            skill_id: rs.skill_id,
+            skill_name: skillName,
+            skill_category: skillCategory,
+            career_titles: [career.title],
+            max_required: rs.required_proficiency,
+          });
+        } else {
+          const entry = skillAppearanceMap.get(rs.skill_id)!;
+          if (!entry.career_titles.includes(career.title)) {
+            entry.career_titles.push(career.title);
+          }
+          entry.max_required = Math.max(entry.max_required, rs.required_proficiency);
+        }
+
+        return {
+          skill_id: rs.skill_id,
+          skill_name: skillName,
+          skill_category: skillCategory,
+          required_proficiency: rs.required_proficiency,
+          student_proficiency: studentProf,
+          skill_gap: gap,
+          importance: rs.importance || (rs.is_core ? 'Critical' : 'Important'),
+          is_satisfied: gap === 0,
+        };
+      });
+
+      const matchPct = totalReqScore > 0 ? Math.round((totalAcquiredScore / totalReqScore) * 100) : 0;
+
+      comparedCareers.push({
+        id: career.id,
+        title: career.title,
+        category: career.category,
+        description: career.description,
+        average_salary: (career as any).average_salary || null,
+        required_skills_count: roleSkills.length,
+        match_readiness_percentage: matchPct,
+        major_gaps_count: majorGaps,
+        missing_skills_count: missingSkills,
+        estimated_workload_weeks: totalWeeks,
+        skills: skillList,
+      });
+    }
+
+    // Filter transferable skills (required by 2 or more selected careers)
+    const transferableSkills = Array.from(skillAppearanceMap.values())
+      .filter((entry) => entry.career_titles.length >= 2)
+      .map((entry) => {
+        const studentProf = studentSkillsMap.get(entry.skill_id) || 0;
+        return {
+          skill_id: entry.skill_id,
+          skill_name: entry.skill_name,
+          skill_category: entry.skill_category,
+          careers_count: entry.career_titles.length,
+          career_titles: entry.career_titles,
+          student_proficiency: studentProf,
+          max_required_proficiency: entry.max_required,
+          explanation: `Required across ${entry.career_titles.join(' and ')}. Mastering ${entry.skill_name} simultaneously advances multiple career paths.`,
+        };
+      })
+      .sort((a, b) => b.careers_count - a.careers_count);
+
+    return {
+      careers: comparedCareers,
+      transferable_skills: transferableSkills,
     };
   }
 }

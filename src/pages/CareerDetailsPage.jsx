@@ -99,9 +99,9 @@ export const CareerDetailsPage = () => {
           ) : (
             <>
               {/* Career Banner */}
-              <section className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+              <section className="bg-white border border-slate-200/90 rounded-2xl p-6 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+                  <div className="w-12 h-12 rounded-2xl bg-indigo-600 text-white flex items-center justify-center shrink-0 shadow-xs">
                     <Briefcase className="w-6 h-6" />
                   </div>
                   <div>
@@ -123,10 +123,10 @@ export const CareerDetailsPage = () => {
                   <button
                     onClick={handleSelectTarget}
                     disabled={selecting || isSelected}
-                    className={`flex-1 sm:flex-none px-4 py-2.5 text-xs font-bold rounded-xl transition shadow-sm ${
+                    className={`flex-1 sm:flex-none px-4 py-2.5 text-xs font-bold rounded-xl transition shadow-xs ${
                       isSelected
                         ? 'bg-emerald-600 text-white cursor-default'
-                        : 'bg-blue-600 hover:bg-blue-700 text-white disabled:opacity-50'
+                        : 'bg-indigo-600 hover:bg-indigo-700 text-white disabled:opacity-50'
                     }`}
                   >
                     {isSelected ? 'Active Target Role' : selecting ? 'Selecting...' : 'Set as Target Career'}
@@ -145,7 +145,7 @@ export const CareerDetailsPage = () => {
               </section>
 
               {/* Requirements List */}
-              <section className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+              <section className="bg-white border border-slate-200/90 rounded-2xl p-6 shadow-xs">
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <h2 className="text-base font-extrabold text-slate-900">Required Skills & Proficiencies</h2>

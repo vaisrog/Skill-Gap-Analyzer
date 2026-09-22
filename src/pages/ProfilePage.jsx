@@ -70,9 +70,9 @@ export const ProfilePage = () => {
         {isStudent && <Sidebar />}
 
         <main className="flex-1 p-6 space-y-6 overflow-y-auto">
-          <section className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+          <section className="bg-white border border-slate-200/90 rounded-2xl p-6 shadow-xs">
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-2xl bg-blue-600 text-white flex items-center justify-center font-extrabold text-xl shadow-sm">
+              <div className="w-14 h-14 rounded-2xl bg-indigo-600 text-white flex items-center justify-center font-extrabold text-xl shadow-xs">
                 {user?.full_name ? user.full_name.charAt(0).toUpperCase() : 'U'}
               </div>
               <div>
@@ -85,7 +85,7 @@ export const ProfilePage = () => {
           {loading ? (
             <LoadingSpinner label="Loading profile information..." />
           ) : (
-            <section className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm max-w-3xl">
+            <section className="bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-8 shadow-xs max-w-3xl">
               <h2 className="text-lg font-extrabold text-slate-900 mb-6">Profile Details</h2>
 
               {success && (
@@ -107,7 +107,7 @@ export const ProfilePage = () => {
                       required
                       value={formData.full_name}
                       onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
-                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition"
+                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition"
                     />
                   </div>
                 </div>
@@ -139,7 +139,7 @@ export const ProfilePage = () => {
                         value={formData.qualification}
                         onChange={(e) => setFormData({ ...formData, qualification: e.target.value })}
                         placeholder="e.g. B.Tech Computer Science"
-                        className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition"
+                        className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition"
                       />
                     </div>
                   </div>
@@ -156,7 +156,7 @@ export const ProfilePage = () => {
                         max={2035}
                         value={formData.graduation_year}
                         onChange={(e) => setFormData({ ...formData, graduation_year: e.target.value })}
-                        className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition"
+                        className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition"
                       />
                     </div>
                   </div>
@@ -173,7 +173,7 @@ export const ProfilePage = () => {
                       value={formData.career_interest}
                       onChange={(e) => setFormData({ ...formData, career_interest: e.target.value })}
                       placeholder="e.g. Cloud Infrastructure, Distributed Backend Systems"
-                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition"
+                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition"
                     />
                   </div>
                 </div>
@@ -182,7 +182,7 @@ export const ProfilePage = () => {
                   <button
                     type="submit"
                     disabled={saving}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white font-bold text-xs rounded-xl shadow-sm transition"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white font-bold text-xs rounded-xl shadow-xs transition"
                   >
                     <Save className="w-4 h-4" />
                     {saving ? 'Saving changes...' : 'Save Profile'}
